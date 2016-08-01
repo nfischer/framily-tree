@@ -1,0 +1,21 @@
+{
+  "name": "framily-tree",
+  "version": "0.1.0",
+  "description": "A fraternity family tree",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "getData": "node scripts/getData.js"
+  },
+  "keywords": [
+    "fraternity",
+    "family",
+    "tree"
+  ],
+  "author": "Nate Fischer <ntfschr@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "google-spreadsheet-to-json": "^0.3.0"
+  }
+}

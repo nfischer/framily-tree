@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <title>Network | Hierarchical layout difference</title>
+
+  <style type="text/css">
+    @font-face {
+      font-family: Junction;
+      src: url("fonts/junction-regular/Junction.otf") format("opentype");
+    }
+    body {
+      font-family: Junction, sans;
+      text-align: center;
+    }
+    #mynetwork {
+      width: 1500px;
+      height: 600px;
+      border: 1px solid lightgrey;
+    }
+  </style>
+
+  <script type="text/javascript" src="lib/vis.min.js"></script>
+  <script type="text/javascript" src="relations.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <link href="lib/vis.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="draw();">
+<h1>Theta Chi Family Tree</h1>
+Color-coding:
+<select id="layout">
+  <option value="family">family</option>
+  <option value="pledgeClass">pledge class</option>
+  <option value="active">active vs. inactive</option>
+</select><br/>
+<br />
+
+<div id="mynetwork"></div>
+
+<p id="selection"></p>
+<script language="JavaScript">
+  var dropdown = document.getElementById("layout");
+  dropdown.onchange = function() {
+    layoutMethod = dropdown.value;
+    draw();
+  }
+</script>
+</body>
+</html>
