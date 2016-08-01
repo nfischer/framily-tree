@@ -721,7 +721,7 @@ var brothers = [
   },
   {
     "name": "Ian Derr",
-    "big": "TODO",
+    "big": "Joe Ryu",
     "pledgeclass": "Fall 2015"
   },
   {
