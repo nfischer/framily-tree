@@ -43,6 +43,7 @@ function createNodes() {
         label: bro.familystarted,
         family: lowerCaseFamily,
         inactive: true, // a family does not count as an active undergraduate
+        font: { size: 50 },
       }
       familyToNode[lowerCaseFamily] = newNode;
       nodes.push(newNode);
