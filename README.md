@@ -21,3 +21,9 @@ Run the project locally:
 ```
 $ npm start
 ```
+
+Deploy the latest changes (after you've committed)
+
+```
+$ npm run deploy
+```
