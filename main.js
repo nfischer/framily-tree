@@ -8,78 +8,139 @@ function destroy() {
   }
 }
 
-function brotherNameToId(name) {
-  var bigId;
-  brothers.forEach(function (x) {
-    if (bigId instanceof Number)
-      return;
-    if (x.name === name) {
-      bigId = x.id;
-    }
-  });
-  return bigId;
-}
+var nameToNode = {};
 
-var colorMethod;
-function draw() {
-  destroy();
-  colorMethod = document.getElementById('layout').value;
+var createNodesCalled = false;
+var nodes = [];
+var edges = [];
+var familyColor = {};
+var pledgeClassColor = {};
+// Only call this once (for effiencency & correctness)
+function createNodes() {
+  if (createNodesCalled)
+    return;
+  createNodesCalled = true;
+  var baseColor = new tinycolor({h: 0, s: 0.7, v: 0.9});
+  var baseColor2 = new tinycolor({h: 0, s: 0.4, v: 0.9});
+  var oldLength = brothers.length;
+  var newIdx = oldLength;
 
-  var edges = [];
-  for (var i = 0; i < brothers.length; i++) {
+  var familyToNode = {};
+  for (var i = 0; i < oldLength; i++) {
     var bro = brothers[i];
     bro.id = i;
-    bro.label = bro.name;
 
-    // Add in any edges
-    edges.push({from: bro.big, to: bro.id});
+    var lowerCaseFamily = (bro.familystarted || '').toLowerCase();
+    if (lowerCaseFamily && !familyColor[lowerCaseFamily]) {
+      // Add a new family
+      baseColor = baseColor.spin(77); // some arbitrary spin
+      familyColor[lowerCaseFamily] = baseColor.toHexString();
+
+      // Create a root for that family
+      var newNode = {
+        id: newIdx++, // increment
+        name: lowerCaseFamily,
+        label: bro.familystarted,
+        family: lowerCaseFamily,
+        inactive: true, // a family does not count as an active undergraduate
+      }
+      familyToNode[lowerCaseFamily] = newNode;
+      nodes.push(newNode);
+    }
+
+    if (bro.big && lowerCaseFamily) {
+      // This person has a big bro, but they also started a new family of their
+      // own, so let's put them in both spots
+
+      // Create a placeholder node under his big bro
+      edges.push({from: bro.big, to: newIdx});
+      nodes.push(Object.assign({}, bro, {
+        id: newIdx++, // increment
+        name: '', // some non-existing name
+        label: '[' + bro.name + ']',
+        family: bro.familystarted.toLowerCase(),
+      }));
+
+      // Create the real node under his family
+      edges.push({from: familyToNode[lowerCaseFamily].id, to: bro.id});
+    } else if (lowerCaseFamily) {
+      // This person founded a family, and has no big bro, so put his node
+      // directly underneath the family node
+      edges.push({from: familyToNode[lowerCaseFamily].id, to: bro.id});
+    } else {
+      // This person is just a regular brother
+      edges.push({from: bro.big, to: bro.id});
+    }
+    bro.big = bro.big || lowerCaseFamily;
+
+    var lowerCaseClass = (bro.pledgeclass || '').toLowerCase();
+    if (lowerCaseClass && !pledgeClassColor[lowerCaseClass]) {
+      // Add a new Pledge Class
+      baseColor2 = baseColor2.spin(37); // some arbitrary spin
+      pledgeClassColor[lowerCaseClass] = baseColor2.toHexString();
+    }
+
+    bro.label = bro.name; // Display the name in the graph
+
+    nodes.push(bro); // Add this to the list of nodes to display
   }
 
-  // re-process the edges
-  edges.forEach(function (edge) {
-    edge.from = brotherNameToId(edge.from);
-    brothers[edge.to].bigId = edge.from;
+  // Change .big from a string to a link to the big brother node
+  nodes.forEach(function(bro) {
+    if (bro.big) {
+      if (nameToNode[bro.big]) {
+        bro.big = nameToNode[bro.big];
+      } else {
+        nodes.forEach(function (bro2) {
+          if (bro.big === bro2.name) {
+            nameToNode[bro.big] = bro2;
+            bro.big = bro2;
+          }
+        });
+      }
+    }
   });
 
-  // TODO(nate): update all colors
-  var pledgeClassColor = {
-    'fall 2012': 'orange',
-    'winter 2013': 'lightgreen',
-    'spring 2013': 'salmon',
-    'fall 2013': 'blue',
-    'winter 2014': 'lightblue',
-    'spring 2014': 'purple',
-    'fall 2014': 'yellow',
-    'winter 2015': 'magenta',
-    'spring 2015': 'paleturquoise',
-    //'fall 2015': 'orange',
-    //'winter 2016': 'orange',
-    //'spring 2016': 'orange',
-    //'fall 2016': 'orange',
-  };
-
-  var familyColor = {
-    saints: 'lightblue',
-    regulators: 'salmon',
-    liberators: 'red',
-    'the family': 'lightgreen',
-    'the sith and brandon louey': 'yellow',
-  };
+  // Fix the edges (that point from strings instead of node IDs)
+  edges.forEach(function (edge) {
+    if (typeof edge.from === 'string')
+      edge.from = nameToNode[edge.from].id;
+  });
 
   function getFamily(node) {
+    node.family = node.family || node.familystarted;
+    if (node.family)
+      return node.family;
     try {
       if (!(node.family)) {
-        node.family = getFamily(brothers[node.bigId]);
+        node.family = getFamily(node.big);
       }
     } catch (e) {
       node.family = 'unknown';
     }
+
     return node.family;
   }
 
   // re-process the brothers
-  brothers.forEach(function (node) {
+  // Color all the nodes (according to this color scheme)
+  nodes.forEach(function (node) {
+    // Get the family information
     getFamily(node);
+
+    // Mark the family as active (if it has 1 or more active members)
+    if (!node.inactive && !node.graduated)
+      familyToNode[node.family.toLowerCase()].inactive = false;
+  });
+}
+
+function draw() {
+  destroy();
+  if (!createNodesCalled)
+    createNodes();
+  nodes.forEach(function (node) {
+    // getFamily(node);
+    var colorMethod = document.getElementById('layout').value;
     switch (colorMethod) {
       case 'active':
         node.color = (node.inactive || node.graduated) ? 'lightgrey' : 'lightblue';
@@ -93,13 +154,12 @@ function draw() {
         break;
     }
     if (!node.color) node.color = 'lightgrey';
-    // console.log(node);
   });
 
   // create a network
   var container = document.getElementById('mynetwork');
   var data = {
-    nodes: brothers,
+    nodes: nodes,
     edges: edges
   };
 

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Network | Hierarchical layout difference</title>
+  <title>Theta Chi Family Tree</title>
 
   <style type="text/css">
     @font-face {
@@ -20,6 +20,7 @@
   </style>
 
   <script type="text/javascript" src="lib/vis.min.js"></script>
+  <script type="text/javascript" src="lib/tinycolor.js"></script>
   <script type="text/javascript" src="relations.js"></script>
   <script type="text/javascript" src="main.js"></script>
   <link href="lib/vis.min.css" rel="stylesheet" type="text/css" />
@@ -41,7 +42,6 @@ Color-coding:
 <script language="JavaScript">
   var dropdown = document.getElementById("layout");
   dropdown.onchange = function() {
-    layoutMethod = dropdown.value;
     draw();
   }
 </script>
