@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "opener http://127.0.0.1:8080 & http-server",
     "getData": "node scripts/getData.js"
   },
   "keywords": [
@@ -16,6 +17,8 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "google-spreadsheet-to-json": "^0.3.0"
+    "google-spreadsheet-to-json": "^0.3.0",
+    "http-server": "^0.9.0",
+    "opener": "^1.4.1"
   }
 }
