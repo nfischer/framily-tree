@@ -10,17 +10,7 @@ var brothers = [
     "graduated": true
   },
   {
-    "name": "Chris Alley",
-    "big": "Berek Waldman",
-    "graduated": true
-  },
-  {
     "name": "Robert Terzoli",
-    "big": "Berek Waldman",
-    "graduated": true
-  },
-  {
-    "name": "Andy Liu",
     "big": "Berek Waldman",
     "graduated": true
   },
@@ -30,18 +20,7 @@ var brothers = [
     "graduated": true
   },
   {
-    "name": "Nick Westman",
-    "big": "Robert Terzoli",
-    "familystarted": "Liberators",
-    "graduated": true
-  },
-  {
     "name": "Eric Pedroza",
-    "big": "Robert Terzoli",
-    "graduated": true
-  },
-  {
-    "name": "Justin Hutton",
     "big": "Robert Terzoli",
     "graduated": true
   },
@@ -152,16 +131,6 @@ var brothers = [
     "graduated": true
   },
   {
-    "name": "Alan Covarrubias",
-    "big": "Austin Tate",
-    "graduated": true
-  },
-  {
-    "name": "Alex Jimenez",
-    "big": "West Cohan",
-    "graduated": true
-  },
-  {
     "name": "Josh May",
     "big": "Trevor Maddison",
     "graduated": true
@@ -202,17 +171,7 @@ var brothers = [
     "graduated": true
   },
   {
-    "name": "Henry Okoiroke",
-    "familystarted": "The Family",
-    "graduated": true
-  },
-  {
     "name": "Philippe Videau",
-    "big": "Henry Okoiroke",
-    "graduated": true
-  },
-  {
-    "name": "Alex Sanciangco",
     "big": "Henry Okoiroke",
     "graduated": true
   },
@@ -247,8 +206,64 @@ var brothers = [
     "graduated": true
   },
   {
+    "name": "Justin Hutton",
+    "big": "Robert Terzoli",
+    "pledgeclass": "Spring 2010",
+    "graduated": true
+  },
+  {
+    "name": "Henry Okoiroke",
+    "pledgeclass": "Fall 2010",
+    "familystarted": "The Family",
+    "graduated": true
+  },
+  {
+    "name": "Chris Alley",
+    "big": "Berek Waldman",
+    "pledgeclass": "Fall 2010",
+    "graduated": true
+  },
+  {
+    "name": "Andy Liu",
+    "big": "Berek Waldman",
+    "pledgeclass": "Fall 2010",
+    "graduated": true
+  },
+  {
+    "name": "Alan Covarrubias",
+    "big": "Austin Tate",
+    "pledgeclass": "Fall 2011",
+    "graduated": true
+  },
+  {
+    "name": "Alex Jimenez",
+    "big": "West Cohan",
+    "pledgeclass": "Fall 2011",
+    "graduated": true
+  },
+  {
+    "name": "Alex Sanciangco",
+    "big": "Henry Okoiroke",
+    "pledgeclass": "Winter 2012",
+    "graduated": true
+  },
+  {
+    "name": "James Robarge",
+    "big": "Sachin Nediyanchath",
+    "pledgeclass": "Winter 2012",
+    "graduated": true
+  },
+  {
+    "name": "Nick Westman",
+    "big": "Robert Terzoli",
+    "pledgeclass": "Spring 2012",
+    "familystarted": "Liberators",
+    "graduated": true
+  },
+  {
     "name": "John Sy",
     "big": "Josh Goldman",
+    "pledgeclass": "Spring 2012",
     "graduated": true
   },
   {
@@ -375,12 +390,6 @@ var brothers = [
   {
     "name": "Jeremy Rodriguez",
     "big": "Alan Covarrubias",
-    "pledgeclass": "Winter 2013",
-    "graduated": true
-  },
-  {
-    "name": "James Robarge",
-    "big": "Sachin Nediyanchath",
     "pledgeclass": "Winter 2013",
     "graduated": true
   },

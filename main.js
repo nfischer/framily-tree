@@ -8,13 +8,12 @@ function destroy() {
   }
 }
 
-var nameToNode = {};
-
 var createNodesCalled = false;
 var nodes = [];
 var edges = [];
 var familyColor = {};
 var pledgeClassColor = {};
+
 // Only call this once (for effiencency & correctness)
 function createNodes() {
   if (createNodesCalled)
@@ -86,6 +85,7 @@ function createNodes() {
     nodes.push(bro); // Add this to the list of nodes to display
   }
 
+  var nameToNode = {};
   // Change .big from a string to a link to the big brother node
   nodes.forEach(function(bro) {
     if (bro.big) {
@@ -168,12 +168,12 @@ function draw() {
     layout: {
       hierarchical: {
         sortMethod: 'directed',
-      }
+      },
     },
     edges: {
       smooth: true,
-      arrows: {to : true }
-    }
+      arrows: {to : true },
+    },
   };
   network = new vis.Network(container, data, options);
 }
