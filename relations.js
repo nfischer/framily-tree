@@ -752,6 +752,11 @@ var brothers = [
     "pledgeclass": "Fall 2015"
   },
   {
+    "name": "Connor Sullivan",
+    "big": "Nick Massoni",
+    "pledgeclass": "Fall 2015"
+  },
+  {
     "name": "James Marino",
     "big": "Mitchell Bendersky",
     "pledgeclass": "Winter 2016"

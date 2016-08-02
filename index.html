@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Theta Chi Family Tree</title>
+  <!-- Disable zoom on mobile -->
+  <meta content='width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
 
   <style type="text/css">
     @font-face {
@@ -39,6 +41,12 @@
     // Apply this when the document loads, or window resizes
     $(document).ready(onZoom);
     $(window).resize(onZoom);
+
+    // Disable vertical bounce on mobile
+    // Taken from http://stackoverflow.com/q/9669670
+    function stopScrolling( touchEvent ) { touchEvent.preventDefault(); }
+    // document.addEventListener( 'touchstart' , stopScrolling , false );
+    document.addEventListener( 'touchmove' , stopScrolling , false );
   </script>
 </head>
 
