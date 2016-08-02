@@ -71,7 +71,7 @@ var brothers = [
     "graduated": true
   },
   {
-    "name": "Andy ???",
+    "name": "Andy Hindoyan",
     "familystarted": "Regulators",
     "graduated": true
   },
@@ -112,12 +112,12 @@ var brothers = [
   },
   {
     "name": "Tim Egan",
-    "big": "Andy ???",
+    "big": "Andy Hindoyan",
     "graduated": true
   },
   {
     "name": "West Cohan",
-    "big": "Andy ???",
+    "big": "Andy Hindoyan",
     "graduated": true
   },
   {
