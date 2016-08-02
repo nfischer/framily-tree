@@ -19,7 +19,7 @@ function createNodes() {
   if (createNodesCalled)
     return;
   createNodesCalled = true;
-  var baseColor = new tinycolor({h: 0, s: 0.7, v: 0.9});
+  var baseColor = new tinycolor({h: 0, s: 0.6, v: 0.9});
   var baseColor2 = new tinycolor({h: 0, s: 0.4, v: 0.9});
   var oldLength = brothers.length;
   var newIdx = oldLength;
