@@ -584,6 +584,12 @@ var brothers = [
     "pledgeclass": "Winter 2014"
   },
   {
+    "name": "Christian Gonzalez",
+    "big": "Nick Blackburn",
+    "pledgeclass": "Winter 2014",
+    "graduated": true
+  },
+  {
     "name": "Mitchell Bendersky",
     "big": "Kevin Patterson",
     "pledgeclass": "Fall 2014",
