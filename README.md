@@ -28,6 +28,13 @@ Deploy the latest changes (after you've committed)
 $ npm run deploy
 ```
 
+If all that sounds scary, just use **easy mode** to fetch the data, save it, and
+update the website (all at once):
+
+```
+$ npm run easyMode
+```
+
 ## License
 
 All original source files are licensed under the MIT license. All dependencies
