@@ -8,7 +8,7 @@
     "start": "opener http://127.0.0.1:8080 & http-server",
     "deploy": "deploy-gh",
     "getData": "node scripts/getData.js",
-    "easyMode": "npm run getData && git commit -am 'Update data' && npm run deploy"
+    "easyMode": "npm install && npm run getData && git commit -am 'Update data' && npm run deploy"
   },
   "keywords": [
     "fraternity",
