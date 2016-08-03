@@ -4,35 +4,44 @@ Check it out [online](https://nfischer.github.io/framily-tree).
 
 ## How does it work?
 
-When I set out, I had a few goals I tried to stick to:
+When I set out, I had a few goals:
 
  1. Easy to maintain/update
  2. Easy to share
  3. Interactive
- 4. Free (fraternities are poor) to host/maintain/update/etc.
+ 4. Free to upkeep (fraternities are poor)
 
-To make it interactive, it really needs to be a website. And to keep it free,
-Github Pages seems like a good option. Unfortunately, since Github Pages only
-lets you deploy static sites, that meant I had to figure out how to build this
-without a backend, all while keeping it easy to update.
+To make it both interactive and shareable, it really needs to be a website. To
+keep it free, hosting on Github Pages seemed like a good option. As I was
+building this, I realized the easiest way to enter all the data would be in a
+Google Spreadsheet.
+
+Github Pages only lets you deploy static sites, so that meant I had to figure
+out how to build this without a backend, and still link it to a Google Doc in an
+easy-to-use manner.
 
 ### The resulting design
 
 This is divided into a few different parts:
 
- 1. The static site (which you hopefully don't need to touch)
+ 1. The static site (which you hopefully don't need to touch) (`index.html` and
+    `main.js`)
  2. A [google
     doc](https://docs.google.com/spreadsheets/d/1h6dVJKtETWX3Kr9PT6EaLu0gGavdi8Gnj4IlX155pfY/edit#gid=0)
-    holding the data (free & easy to use)
- 3. The tools to link them together (aka a bunch of `npm` scripts)
+    holding the raw data (free & easy to use)
+ 3. The tools to link them together (`npm` scripts to convert the Google doc
+    data into JSON format in `relations.js`)
 
-To update the data, just add all the new fraternity initiates to the google
-spreadsheet online. To pull those changes into the project and launch the
-results, use [easy mode](#easy-mode):
+To update the data, just add all the new fraternity initiates to the [google
+doc](https://docs.google.com/spreadsheets/d/1h6dVJKtETWX3Kr9PT6EaLu0gGavdi8Gnj4IlX155pfY/edit#gid=0)
+online. To pull those changes into the project and launch the results, use [easy
+mode](#easy-mode):
 
 ```
 $ npm run easyMode
 ```
+
+Maintaining a family tree has never been easier!
 
 ### Design consequences
 
@@ -40,8 +49,8 @@ This requires that the maintainer know how to use Google Spreadsheets (which is
 easy) and also some basic knowledge of the commandline and `npm` (which is a bit
 harder). This can be avoided if you're willing to shell out money for a backend,
 but making this free was one of my goals, so that's what I went with. But if you
-have someone in your fraternity who knows a bit of coding and can enter data in
-a spreadsheet, this should be a breeze to use.
+have someone in your fraternity/sorority who knows a bit of coding and can enter
+data in a spreadsheet, this should be a breeze to use.
 
 ## Building (or maintaining) the project
 
