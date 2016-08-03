@@ -480,8 +480,7 @@ var brothers = [
   {
     "name": "Anthony Cerrato",
     "big": "Matt Louis",
-    "pledgeclass": "Fall 2013",
-    "graduated": true
+    "pledgeclass": "Fall 2013"
   },
   {
     "name": "Victor Yu",
