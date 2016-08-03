@@ -87,6 +87,10 @@ update the website (all at once):
 $ npm run easyMode
 ```
 
+## Forking this project
+
+Check out the [forking instructions](forking.md).
+
 ## License
 
 All original source files are licensed under the MIT license. All dependencies
