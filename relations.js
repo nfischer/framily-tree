@@ -45,7 +45,7 @@ var brothers = [
     "graduated": true
   },
   {
-    "name": "Grand Bishop",
+    "name": "Grant Bishop",
     "big": "Eric Pedroza",
     "graduated": true
   },
