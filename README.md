@@ -9,7 +9,7 @@ When I set out, I had a few goals:
  1. Easy to maintain/update
  2. Easy to share
  3. Interactive
- 4. Free to upkeep (fraternities are poor)
+ 4. Free to upkeep (fraternities are poor :cry:)
 
 To make it both interactive and shareable, it really needs to be a website. To
 keep it free, hosting on Github Pages seemed like a good option. As I was
