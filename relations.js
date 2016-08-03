@@ -156,7 +156,7 @@ var brothers = [
     "graduated": true
   },
   {
-    "name": "Mallvi Kahal",
+    "name": "Mallvy Kahal",
     "big": "Garrett Morgan",
     "graduated": true
   },
@@ -167,7 +167,7 @@ var brothers = [
   },
   {
     "name": "Jae-Ho Nam",
-    "big": "Mallvi Kahal",
+    "big": "Mallvy Kahal",
     "graduated": true
   },
   {
@@ -329,7 +329,7 @@ var brothers = [
   },
   {
     "name": "Joseph Dominguez",
-    "big": "Mallvi Kahal",
+    "big": "Mallvy Kahal",
     "pledgeclass": "Fall 2012",
     "graduated": true
   },
