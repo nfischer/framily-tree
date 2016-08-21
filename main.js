@@ -19,6 +19,7 @@ function createNodes() {
   if (createNodesCalled)
     return;
   createNodesCalled = true;
+
   var baseColor = new tinycolor({h: 0, s: 0.6, v: 0.9});
   var baseColor2 = new tinycolor({h: 0, s: 0.4, v: 0.9});
   var oldLength = brothers.length;
@@ -42,7 +43,7 @@ function createNodes() {
         label: bro.familystarted,
         family: lowerCaseFamily,
         inactive: true, // a family does not count as an active undergraduate
-        font: { size: 50 },
+        font: { size: 50 }, // super-size the font
       }
       familyToNode[lowerCaseFamily] = newNode;
       nodes.push(newNode);
@@ -137,10 +138,8 @@ function createNodes() {
 
 function draw() {
   destroy();
-  if (!createNodesCalled)
-    createNodes();
+  createNodes();
   nodes.forEach(function (node) {
-    // getFamily(node);
     var colorMethod = document.getElementById('layout').value;
     switch (colorMethod) {
       case 'active':
