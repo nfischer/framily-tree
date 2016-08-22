@@ -1,5 +1,6 @@
+/* global vis, tinycolor, brothers */
+/* eslint no-unused-vars: ["error", { "varsIgnorePattern": "draw" }] */
 var network = null;
-var layoutMethod = "directed";
 
 function destroy() {
   if (network !== null) {
@@ -14,14 +15,34 @@ var edges = [];
 var familyColor = {};
 var pledgeClassColor = {};
 
+function ColorSpinner(colorObj, spinAmount) {
+  this.spinAmount = spinAmount;
+  this.color = new tinycolor(colorObj);
+}
+ColorSpinner.prototype.spin = function () {
+  this.color = this.color.spin(this.spinAmount);
+  return this.color.toHexString();
+};
+
+var getNewFamilyColor = (function () {
+  var spinner1 = new ColorSpinner({ h: 0, s: 0.6, v: 0.9 }, 77);
+  return function () {
+    return spinner1.spin();
+  };
+}());
+
+var getNewPledgeClassColor = (function () {
+  var spinner2 = new ColorSpinner({ h: 0, s: 0.4, v: 0.9 }, 37);
+  return function () {
+    return spinner2.spin();
+  };
+}());
+
 // Only call this once (for effiencency & correctness)
 function createNodes() {
-  if (createNodesCalled)
-    return;
+  if (createNodesCalled) return;
   createNodesCalled = true;
 
-  var baseColor = new tinycolor({h: 0, s: 0.6, v: 0.9});
-  var baseColor2 = new tinycolor({h: 0, s: 0.4, v: 0.9});
   var oldLength = brothers.length;
   var newIdx = oldLength;
 
@@ -33,8 +54,7 @@ function createNodes() {
     var lowerCaseFamily = (bro.familystarted || '').toLowerCase();
     if (lowerCaseFamily && !familyColor[lowerCaseFamily]) {
       // Add a new family
-      baseColor = baseColor.spin(77); // some arbitrary spin
-      familyColor[lowerCaseFamily] = baseColor.toHexString();
+      familyColor[lowerCaseFamily] = getNewFamilyColor();
 
       // Create a root for that family
       var newNode = {
@@ -44,7 +64,7 @@ function createNodes() {
         family: lowerCaseFamily,
         inactive: true, // a family does not count as an active undergraduate
         font: { size: 50 }, // super-size the font
-      }
+      };
       familyToNode[lowerCaseFamily] = newNode;
       nodes.push(newNode);
     }
@@ -54,7 +74,7 @@ function createNodes() {
       // own, so let's put them in both spots
 
       // Create a placeholder node under his big bro
-      edges.push({from: bro.big, to: newIdx});
+      edges.push({ from: bro.big, to: newIdx });
       nodes.push(Object.assign({}, bro, {
         id: newIdx++, // increment
         name: '', // some non-existing name
@@ -63,22 +83,21 @@ function createNodes() {
       }));
 
       // Create the real node under his family
-      edges.push({from: familyToNode[lowerCaseFamily].id, to: bro.id});
+      edges.push({ from: familyToNode[lowerCaseFamily].id, to: bro.id });
     } else if (lowerCaseFamily) {
       // This person founded a family, and has no big bro, so put his node
       // directly underneath the family node
-      edges.push({from: familyToNode[lowerCaseFamily].id, to: bro.id});
+      edges.push({ from: familyToNode[lowerCaseFamily].id, to: bro.id });
     } else {
       // This person is just a regular brother
-      edges.push({from: bro.big, to: bro.id});
+      edges.push({ from: bro.big, to: bro.id });
     }
     bro.big = bro.big || lowerCaseFamily;
 
     var lowerCaseClass = (bro.pledgeclass || '').toLowerCase();
     if (lowerCaseClass && !pledgeClassColor[lowerCaseClass]) {
       // Add a new Pledge Class
-      baseColor2 = baseColor2.spin(37); // some arbitrary spin
-      pledgeClassColor[lowerCaseClass] = baseColor2.toHexString();
+      pledgeClassColor[lowerCaseClass] = getNewPledgeClassColor();
     }
 
     bro.label = bro.name; // Display the name in the graph
@@ -88,15 +107,15 @@ function createNodes() {
 
   var nameToNode = {};
   // Change .big from a string to a link to the big brother node
-  nodes.forEach(function(bro) {
-    if (bro.big) {
-      if (nameToNode[bro.big]) {
-        bro.big = nameToNode[bro.big];
+  nodes.forEach(function (member) {
+    if (member.big) {
+      if (nameToNode[member.big]) {
+        member.big = nameToNode[member.big];
       } else {
-        nodes.forEach(function (bro2) {
-          if (bro.big === bro2.name) {
-            nameToNode[bro.big] = bro2;
-            bro.big = bro2;
+        nodes.forEach(function (member2) {
+          if (member.big === member2.name) {
+            nameToNode[member.big] = member2;
+            member.big = member2;
           }
         });
       }
@@ -105,14 +124,14 @@ function createNodes() {
 
   // Fix the edges (that point from strings instead of node IDs)
   edges.forEach(function (edge) {
-    if (typeof edge.from === 'string')
+    if (typeof edge.from === 'string') {
       edge.from = nameToNode[edge.from].id;
+    }
   });
 
   function getFamily(node) {
     node.family = node.family || node.familystarted;
-    if (node.family)
-      return node.family;
+    if (node.family) return node.family;
     try {
       if (!(node.family)) {
         node.family = getFamily(node.big);
@@ -131,8 +150,9 @@ function createNodes() {
     getFamily(node);
 
     // Mark the family as active (if it has 1 or more active members)
-    if (!node.inactive && !node.graduated)
+    if (!node.inactive && !node.graduated) {
       familyToNode[node.family.toLowerCase()].inactive = false;
+    }
   });
 }
 
@@ -148,8 +168,7 @@ function draw() {
       case 'pledgeClass':
         node.color = pledgeClassColor[(node.pledgeclass || '').toLowerCase()];
         break;
-      case 'family':
-      default:
+      default: // 'family'
         node.color = familyColor[node.family.toLowerCase()];
         break;
     }
@@ -171,7 +190,7 @@ function draw() {
     },
     edges: {
       smooth: true,
-      arrows: {to : true },
+      arrows: { to: true },
     },
   };
   network = new vis.Network(container, data, options);

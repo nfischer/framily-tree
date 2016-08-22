@@ -4,7 +4,8 @@
   "description": "A fraternity family tree",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint",
+    "lint": "eslint .",
     "start": "http-server -o",
     "deploy": "deploy-gh",
     "getData": "node scripts/getData.js",
@@ -19,6 +20,9 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "eslint": "^2.0.0",
+    "eslint-config-airbnb-base": "^3.0.0",
+    "eslint-plugin-import": "^1.11.1",
     "deploy-gh": "^0.1.2",
     "google-spreadsheet-to-json": "^0.3.0",
     "http-server": "^0.9.0"
