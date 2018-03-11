@@ -1,0 +1,16 @@
+@font-face {
+  font-family: Junction;
+  src: url("fonts/junction-regular/Junction.otf") format("opentype");
+}
+body {
+  background: #f2f2f2;
+  font-family: Junction, sans;
+  text-align: center;
+}
+#mynetwork {
+  background-image: url("resources/thetachiflagmodified.jpg");
+  background-size: 100%;
+  width: 100%;
+  height: 60em;
+  border: 1px solid lightgrey;
+}
