@@ -32,7 +32,7 @@ var getNewFamilyColor = (function () {
 }());
 
 var getNewPledgeClassColor = (function () {
-  var spinner2 = new ColorSpinner({ h: 0, s: 0.4, v: 0.9 }, 37);
+  var spinner2 = new ColorSpinner({ h: 0, s: 0.4, v: 0.9 }, 23);
   return function () {
     return spinner2.spin();
   };
