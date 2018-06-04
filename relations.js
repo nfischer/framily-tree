@@ -832,7 +832,7 @@ var brothers = [
   },
   {
     "name": "Bruce Kasra",
-    "big": "UNKNOWN",
+    "big": "Tyler Suh",
     "pledgeclass": "Fall 2016"
   },
   {
@@ -852,17 +852,17 @@ var brothers = [
   },
   {
     "name": "Jack Wu",
-    "big": "UNKNOWN",
+    "big": "Anthony Chadwick",
     "pledgeclass": "Fall 2016"
   },
   {
     "name": "Alex Sun",
-    "big": "UNKNOWN",
+    "big": "Abraham Lopez",
     "pledgeclass": "Fall 2016"
   },
   {
     "name": "Lavi Paoletti",
-    "big": "UNKNOWN",
+    "big": "Ian Vaimberg",
     "pledgeclass": "Fall 2016"
   },
   {
@@ -892,12 +892,12 @@ var brothers = [
   },
   {
     "name": "Chris Toubia",
-    "big": "UNKNOWN",
+    "big": "Anthony Cheung",
     "pledgeclass": "Fall 2016"
   },
   {
     "name": "Evan Oneto",
-    "big": "UNKNOWN",
+    "big": "Anthony Song",
     "pledgeclass": "Fall 2016"
   },
   {
@@ -942,7 +942,7 @@ var brothers = [
   },
   {
     "name": "Tyler Packham",
-    "big": "UNKNOWN",
+    "big": "Steven Prado",
     "pledgeclass": "Spring 2017"
   },
   {
@@ -957,12 +957,12 @@ var brothers = [
   },
   {
     "name": "Jerry He",
-    "big": "UNKNOWN",
+    "big": "Kevin Zhang",
     "pledgeclass": "Spring 2017"
   },
   {
     "name": "Danny Lima",
-    "big": "UNKNOWN",
+    "big": "Abraham Lopez",
     "pledgeclass": "Spring 2017"
   },
   {
@@ -972,7 +972,7 @@ var brothers = [
   },
   {
     "name": "Alex Tenorio",
-    "big": "UNKNOWN",
+    "big": "Connor Sullivan",
     "pledgeclass": "Fall 2017"
   },
   {
@@ -982,7 +982,7 @@ var brothers = [
   },
   {
     "name": "Blake Hirst",
-    "big": "UNKNOWN",
+    "big": "Nick Edman",
     "pledgeclass": "Fall 2017"
   },
   {
@@ -997,17 +997,17 @@ var brothers = [
   },
   {
     "name": "Jose Perez",
-    "big": "UNKNOWN",
+    "big": "Stephen Saltvig",
     "pledgeclass": "Fall 2017"
   },
   {
     "name": "Julian Adam",
-    "big": "UNKNOWN",
+    "big": "Nikhil Bhardwaja",
     "pledgeclass": "Fall 2017"
   },
   {
     "name": "Kenny Nicholson",
-    "big": "UNKNOWN",
+    "big": "Craig Buchholz",
     "pledgeclass": "Fall 2017"
   },
   {
@@ -1022,7 +1022,7 @@ var brothers = [
   },
   {
     "name": "Brandon Kim",
-    "big": "UNKNOWN",
+    "big": "Peyton Cotto",
     "pledgeclass": "Fall 2017"
   },
   {
@@ -1032,7 +1032,7 @@ var brothers = [
   },
   {
     "name": "Jack Feder",
-    "big": "UNKNOWN",
+    "big": "Danny Lima",
     "pledgeclass": "Fall 2017"
   },
   {
@@ -1052,47 +1052,57 @@ var brothers = [
   },
   {
     "name": "Sebastian Haworth",
-    "big": "UNKNOWN",
+    "big": "Ari Sweedler",
     "pledgeclass": "Fall 2017"
   },
   {
     "name": "Justin Hatch",
-    "big": "UNKNOWN",
+    "big": "Danny Lima",
     "pledgeclass": "Winter 2018"
   },
   {
     "name": "Bryan Ding",
-    "big": "UNKNOWN",
+    "big": "Abhinava Shriraam",
     "pledgeclass": "Winter 2018"
   },
   {
     "name": "Jerald Scott",
-    "big": "UNKNOWN",
+    "big": "Alex Garcia",
     "pledgeclass": "Winter 2018"
   },
   {
     "name": "Yash Shah",
-    "big": "UNKNOWN",
+    "big": "Ian Vaimberg",
     "pledgeclass": "Winter 2018"
   },
   {
     "name": "Jack Arnold",
-    "big": "UNKNOWN",
+    "big": "Blake Hirst",
     "pledgeclass": "Winter 2018"
   },
   {
     "name": "Matthew Go",
-    "big": "UNKNOWN",
+    "big": "Charles Stoksik",
     "pledgeclass": "Winter 2018"
   },
   {
     "name": "Edvin Pepic",
-    "big": "UNKNOWN",
+    "big": "Alexander Hurley",
     "pledgeclass": "Winter 2018"
   },
   {
-    "name": "UNKNOWN",
-    "pledgeclass": "UNKNOWN",
-    "familystarted": "UNKNOWN"
+    "name": "Jonathan Schultz",
+    "big": "Kenny Nicholson",
+    "pledgeclass": "Spring 2018"
+  },
+  {
+    "name": "Cameron Saneii",
+    "big": "Brandon Kim",
+    "pledgeclass": "Spring 2018"
+  },
+  {
+    "name": "Dante Bruno",
+    "big": "Connor Sullivan",
+    "pledgeclass": "Spring 2018"
   }
 ];
