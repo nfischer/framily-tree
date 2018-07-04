@@ -156,6 +156,35 @@ function createNodes() {
   });
 }
 
+/**
+ * Searches for the specific brother (case-insensitive, matches any substring).
+ * If found, this zooms the network to focus on that brother's node.
+ *
+ * Returns whether or not the search succeeded. This always returns `true` for
+ * an empty query.
+ */
+function findBrother(name) {
+  if (!name) return true; // Don't search for an empty query.
+  // This requires the network to be instantiated, which implies `nodes` has
+  // been populated.
+  if (!network) return false;
+
+  var lowerCaseName = name.toLowerCase();
+  var found = nodes.find(function (element) {
+    // return element.name === name;
+    return element.name.toLowerCase().includes(lowerCaseName);
+  });
+  if (found) {
+    network.focus(found.id, {
+      scale: 0.9,
+      animation: true,
+    });
+    network.selectNodes([ found.id ]);
+    return true;
+  }
+  return false; // Could not find a match
+}
+
 function draw() {
   destroy();
   createNodes();

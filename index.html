@@ -37,13 +37,17 @@
 <body onload="draw();">
 
 <h1>Theta Chi Family Tree</h1>
-Color-coding:
+<p>Color-coding:
 <select id="layout">
   <option value="family">family</option>
   <option value="pledgeClass">pledge class</option>
   <option value="active">active vs. inactive</option>
-</select><br/>
-<br />
+</select></p>
+<div>
+  <input type="text" id="searchbox" placeholder="Brother's name...">
+  <button id="searchbutton">Search</button>
+</div>
+<br/>
 
 <div id="mynetwork"></div>
 
@@ -53,6 +57,27 @@ Color-coding:
   dropdown.onchange = function() {
     draw();
   }
+
+  function search() {
+    var query = $('#searchbox').val();
+    var success = findBrother(query);
+
+    // Indicate if the search succeeded or not.
+    if (success) {
+      $('#searchbox').css('color', 'black');
+    } else {
+      $('#searchbox').css('color', 'red');
+    }
+  }
+  document.getElementById("searchbox").onkeypress = function(e) {
+    if (!e) e = window.event;
+    var keyCode = e.keyCode || e.which;
+    if (keyCode === '13' || keyCode === 13 /* Enter */) {
+      search();
+    }
+  };
+
+  document.getElementById("searchbutton").onclick = search;
 </script>
 </body>
 </html>
