@@ -2,16 +2,12 @@
 /* eslint no-unused-vars: ["error", { "varsIgnorePattern": "draw" }] */
 var network = null;
 
-function destroy() {
-  if (network !== null) {
-    network.destroy();
-    network = null;
-  }
-}
-
 var createNodesCalled = false;
 var nodes = [];
 var edges = [];
+var nodesDataSet;
+var edgesDataSet;
+
 var familyColor = {};
 var pledgeClassColor = {};
 
@@ -154,6 +150,9 @@ function createNodes() {
       familyToNode[node.family.toLowerCase()].inactive = false;
     }
   });
+
+  nodesDataSet = new vis.DataSet(nodes);
+  edgesDataSet = new vis.DataSet(edges);
 }
 
 /**
@@ -186,41 +185,55 @@ function findBrother(name) {
 }
 
 function draw() {
-  destroy();
   createNodes();
-  nodes.forEach(function (node) {
-    var colorMethod = document.getElementById('layout').value;
-    switch (colorMethod) {
-      case 'active':
-        node.color = (node.inactive || node.graduated) ? 'lightgrey' : 'lightblue';
-        break;
-      case 'pledgeClass':
-        node.color = pledgeClassColor[(node.pledgeclass || '').toLowerCase()];
-        break;
-      default: // 'family'
+
+  var changeColor;
+  var colorMethod = document.getElementById('layout').value;
+  switch (colorMethod) {
+    case 'active':
+      changeColor = function (node) {
+        node.color = (node.inactive || node.graduated) ?
+          'lightgrey' : 'lightblue';
+        nodesDataSet.update(node);
+      };
+      break;
+    case 'pledgeClass':
+      changeColor = function (node) {
+        node.color = node.pledgeclass ?
+          pledgeClassColor[node.pledgeclass.toLowerCase()] :
+          'lightgrey';
+        nodesDataSet.update(node);
+      };
+      break;
+    default: // 'family'
+      changeColor = function (node) {
         node.color = familyColor[node.family.toLowerCase()];
-        break;
-    }
-    if (!node.color) node.color = 'lightgrey';
-  });
+        nodesDataSet.update(node);
+      };
+      break;
+  }
+  nodes.forEach(changeColor);
+  if (!network) {
+    // create a network
+    var container = document.getElementById('mynetwork');
+    var data = {
+      nodes: nodesDataSet,
+      edges: edgesDataSet,
+    };
 
-  // create a network
-  var container = document.getElementById('mynetwork');
-  var data = {
-    nodes: nodes,
-    edges: edges
-  };
-
-  var options = {
-    layout: {
-      hierarchical: {
-        sortMethod: 'directed',
+    var options = {
+      layout: {
+        hierarchical: {
+          sortMethod: 'directed',
+        },
       },
-    },
-    edges: {
-      smooth: true,
-      arrows: { to: true },
-    },
-  };
-  network = new vis.Network(container, data, options);
+      edges: {
+        smooth: true,
+        arrows: { to: true },
+      },
+    };
+    network = new vis.Network(container, data, options);
+  } else {
+    network.redraw();
+  }
 }
