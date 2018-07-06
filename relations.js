@@ -316,7 +316,7 @@ var brothers = [
     "graduated": true
   },
   {
-    "name": "Jonathon Mendoza",
+    "name": "Jonathan Mendoza",
     "big": "Sachin Nediyanchath",
     "pledgeclass": "Fall 2012",
     "graduated": true
@@ -506,7 +506,7 @@ var brothers = [
   },
   {
     "name": "Sujith Cherukumilli",
-    "big": "Jonathon Mendoza",
+    "big": "Jonathan Mendoza",
     "pledgeclass": "Fall 2013"
   },
   {
