@@ -157,9 +157,9 @@ function createNodes() {
       var node = nameToNode[name];
       if (!node) {
         var correctedName = didYouMeanWrapper(name);
-        console.error(
-          'Unable to find ' + name + ', did you mean ' + correctedName + '?');
-        return; // return, because there's nothing more we can do to recover.
+        var msg =
+          'Unable to find ' + name + ', did you mean ' + correctedName + '?';
+        throw new Error(msg);
       }
       edge.from = node.id;
     }
