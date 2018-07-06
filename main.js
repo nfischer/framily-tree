@@ -1,5 +1,4 @@
 /* global vis, tinycolor, brothers */
-/* eslint no-unused-vars: ["error", { "varsIgnorePattern": "draw" }] */
 var network = null;
 
 var createNodesCalled = false;
@@ -162,7 +161,7 @@ function createNodes() {
  * Returns whether or not the search succeeded. This always returns `true` for
  * an empty query.
  */
-function findBrother(name) {
+function findBrother(name) { // eslint-disable-line no-unused-vars
   if (!name) return true; // Don't search for an empty query.
   // This requires the network to be instantiated, which implies `nodes` has
   // been populated.
@@ -178,13 +177,13 @@ function findBrother(name) {
       scale: 0.9,
       animation: true,
     });
-    network.selectNodes([ found.id ]);
+    network.selectNodes([found.id]);
     return true;
   }
   return false; // Could not find a match
 }
 
-function draw() {
+function draw() { // eslint-disable-line no-unused-vars
   createNodes();
 
   var changeColor;
