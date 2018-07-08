@@ -37,15 +37,16 @@
 <body onload="draw();">
 
 <h1>Theta Chi Family Tree</h1>
-<p>Color-coding:
+<p>
+<label for="layout">Color-coding:</label>
 <select id="layout">
   <option value="family">family</option>
   <option value="pledgeClass">pledge class</option>
   <option value="active">active vs. inactive</option>
 </select></p>
 <div>
+  <label for="searchbox">Search:</label>
   <input type="text" id="searchbox" placeholder="Brother's name...">
-  <button id="searchbutton">Search</button>
 </div>
 <br/>
 
@@ -61,20 +62,16 @@
   function search() {
     var query = $('#searchbox').val();
     var success = findBrother(query);
-
     // Indicate if the search succeeded or not.
     if (success) {
-      $('#searchbox').css('color', 'black');
+      $('#searchbox').css('background-color', 'white');
     } else {
-      $('#searchbox').css('color', 'red');
+      $('#searchbox').css('background-color', '#EEC4C6'); // red matching flag
     }
   }
-  document.getElementById("searchbox").onkeypress = function(e) {
+  document.getElementById("searchbox").onkeyup = function(e) {
     if (!e) e = window.event;
-    var keyCode = e.keyCode || e.which;
-    if (keyCode === '13' || keyCode === 13 /* Enter */) {
-      search();
-    }
+    search();
   };
 
   document.getElementById("searchbutton").onclick = search;
