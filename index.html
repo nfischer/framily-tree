@@ -14,23 +14,9 @@
   <script type="text/javascript" src="main.js"></script>
   <link href="lib/vis.min.css" rel="stylesheet" type="text/css" />
   <link href="css/main.css" rel="stylesheet" type="text/css" />
-
-  <script type="text/javascript">
-    // Size the network appropriately
-    function onZoom() {
-      var ratio = 2/3; // the aspect ratio of the background image
-      var cw = $('#mynetwork').width();
-      $('#mynetwork').css({'height': (cw*ratio) + 'px'});
-    }
-    // Apply this when the document loads, or window resizes
-    $(document).ready(onZoom);
-    $(window).resize(onZoom);
-  </script>
 </head>
 
-<!-- draw() is defined in main.js -->
-<body onload="draw();">
-
+<body>
 <h1>Theta Chi Family Tree</h1>
 <p>Color-coding:
 <select id="layout">
@@ -47,32 +33,5 @@
 <div id="mynetwork"></div>
 
 <p id="selection"></p>
-<script type="text/javascript">
-  var dropdown = document.getElementById("layout");
-  dropdown.onchange = function() {
-    draw();
-  }
-
-  function search() {
-    var query = $('#searchbox').val();
-    var success = findBrother(query);
-
-    // Indicate if the search succeeded or not.
-    if (success) {
-      $('#searchbox').css('color', 'black');
-    } else {
-      $('#searchbox').css('color', 'red');
-    }
-  }
-  document.getElementById("searchbox").onkeypress = function(e) {
-    if (!e) e = window.event;
-    var keyCode = e.keyCode || e.which;
-    if (keyCode === '13' || keyCode === 13 /* Enter */) {
-      search();
-    }
-  };
-
-  document.getElementById("searchbutton").onclick = search;
-</script>
 </body>
 </html>

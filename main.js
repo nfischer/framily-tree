@@ -1,4 +1,4 @@
-/* global vis, tinycolor, brothers */
+/* global vis, tinycolor, brothers, $, didYouMean */
 var network = null;
 
 var createNodesCalled = false;
@@ -111,7 +111,6 @@ function createNodes() {
         nodes.push(unknownNode);
       }
       edges.push({ from: unknownNode.id, to: bro.id });
-
     } else if (lowerCaseFamily) {
       // This person founded a family, and has no big bro, so put his node
       // directly underneath the family node
@@ -275,3 +274,43 @@ function draw() { // eslint-disable-line no-unused-vars
     network.redraw();
   }
 }
+
+$(document).ready(function () {
+  // Size the network appropriately
+  function onZoom() {
+    var ratio = 2 / 3; // the aspect ratio of the background image
+    var cw = $('#mynetwork').width();
+    $('#mynetwork').css({ 'height': (cw * ratio) + 'px' });
+  }
+  // Apply this when the document loads, or window resizes
+  $(document).ready(onZoom);
+  $(window).resize(onZoom);
+
+  // Start the first draw
+  draw();
+
+  // Search feature
+  var dropdown = document.getElementById('layout');
+  dropdown.onchange = function () {
+    draw();
+  };
+  function search() {
+    var query = $('#searchbox').val();
+    var success = findBrother(query);
+
+    // Indicate if the search succeeded or not.
+    if (success) {
+      $('#searchbox').css('color', 'black');
+    } else {
+      $('#searchbox').css('color', 'red');
+    }
+  }
+  document.getElementById('searchbox').onkeypress = function (e) {
+    if (!e) e = window.event;
+    var keyCode = e.keyCode || e.which;
+    if (keyCode === '13' || keyCode === 13 /* Enter */) {
+      search();
+    }
+  };
+  document.getElementById('searchbutton').onclick = search;
+});
