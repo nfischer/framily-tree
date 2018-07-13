@@ -6,6 +6,8 @@ var nodes = [];
 var edges = [];
 var nodesDataSet;
 var edgesDataSet;
+var UNKNOWN_BIG_BRO = 'UNKNOWN';
+var unknownNode;
 
 var familyColor = {};
 var pledgeClassColor = {};
@@ -32,6 +34,16 @@ var getNewPledgeClassColor = (function () {
     return spinner2.spin();
   };
 }());
+
+function didYouMeanWrapper(name) {
+  // We only compute the nameList in the case we call this. This should be
+  // uncommon, because it indicates we've already hit an unrecoverable
+  // data-entry bug.
+  var nameList = brothers.map(function (bro) {
+    return bro.name;
+  });
+  return didYouMean(name, nameList);
+}
 
 // Only call this once (for effiencency & correctness)
 function createNodes() {
@@ -79,6 +91,27 @@ function createNodes() {
 
       // Create the real node under his family
       edges.push({ from: familyToNode[lowerCaseFamily].id, to: bro.id });
+    } else if (!bro.big && !lowerCaseFamily) {
+      // This is a data entry error: everyone should have a big bro, or should
+      // have started a family. For now, just add some default value for both.
+      bro.big = UNKNOWN_BIG_BRO.toLowerCase();
+
+      if (!unknownNode) {
+        // And add a placeholder family node
+        familyColor[UNKNOWN_BIG_BRO.toLowerCase()] = getNewFamilyColor();
+        unknownNode = {
+          id: newIdx++, // increment
+          name: UNKNOWN_BIG_BRO.toLowerCase(),
+          label: UNKNOWN_BIG_BRO,
+          family: UNKNOWN_BIG_BRO.toLowerCase(),
+          inactive: true,
+          font: { size: 50 }, // super-size the font
+        };
+        familyToNode[UNKNOWN_BIG_BRO.toLowerCase()] = unknownNode;
+        nodes.push(unknownNode);
+      }
+      edges.push({ from: unknownNode.id, to: bro.id });
+
     } else if (lowerCaseFamily) {
       // This person founded a family, and has no big bro, so put his node
       // directly underneath the family node
@@ -120,7 +153,15 @@ function createNodes() {
   // Fix the edges (that point from strings instead of node IDs)
   edges.forEach(function (edge) {
     if (typeof edge.from === 'string') {
-      edge.from = nameToNode[edge.from].id;
+      var name = edge.from;
+      var node = nameToNode[name];
+      if (!node) {
+        var correctedName = didYouMeanWrapper(name);
+        var msg =
+          'Unable to find ' + name + ', did you mean ' + correctedName + '?';
+        throw new Error(msg);
+      }
+      edge.from = node.id;
     }
   });
 
@@ -128,9 +169,7 @@ function createNodes() {
     node.family = node.family || node.familystarted;
     if (node.family) return node.family;
     try {
-      if (!(node.family)) {
-        node.family = getFamily(node.big);
-      }
+      node.family = getFamily(node.big);
     } catch (e) {
       node.family = 'unknown';
     }
