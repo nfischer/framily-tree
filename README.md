@@ -2,94 +2,35 @@
 
 Check it out [online](https://nfischer.github.io/framily-tree).
 
+See the data in the [Google
+Spreadsheet](https://docs.google.com/spreadsheets/d/1h6dVJKtETWX3Kr9PT6EaLu0gGavdi8Gnj4IlX155pfY/edit?usp=sharing).
+
+## What is this?
+
+This is an interactive family tree for my fraternity. This shows family lineage
+while also allowing users to interact to better navigate and understand the
+history:
+
+ * Change color coding to organize the tree by family, pledge class, or members'
+   active status
+ * Use the search function to quickly find particular fraternity members in the
+   tree
+ * Play around with graph nodes (they bounce around and collide with each other
+   using a physics engine!)
+
 ## How does it work?
 
-When I set out, I had a few goals:
+Check out the [design overview](https://github.com/nfischer/framily-tree/wiki/Design).
 
- 1. Easy to maintain/update
- 2. Easy to share
- 3. Interactive
- 4. Free to upkeep (fraternities are poor :cry:)
+## Maintaining this family tree
 
-To make it both interactive and shareable, it really needs to be a website. To
-keep it free, hosting on Github Pages seemed like a good option. As I was
-building this, I realized the easiest way to enter all the data would be in a
-Google Spreadsheet.
+Updating the data? Adding new members to the tree? See the instructions
+[here](https://github.com/nfischer/framily-tree/wiki/Updating-data-(adding-new-members)).
 
-Github Pages only lets you deploy static sites, so that meant I had to figure
-out how to build this without a backend, and still link it to a Google Doc in an
-easy-to-use manner.
+## Creating your own family tree
 
-### The resulting design
-
-This is divided into a few different parts:
-
- 1. The static site (which you hopefully don't need to touch) (`index.html` and
-    `main.js`)
- 2. A [google
-    doc](https://docs.google.com/spreadsheets/d/1h6dVJKtETWX3Kr9PT6EaLu0gGavdi8Gnj4IlX155pfY/edit#gid=0)
-    holding the raw data (free & easy to use)
- 3. The tools to link them together (`npm` scripts to convert the Google doc
-    data into JSON format in `relations.js`)
-
-To update the data, just add all the new fraternity initiates to the [google
-doc](https://docs.google.com/spreadsheets/d/1h6dVJKtETWX3Kr9PT6EaLu0gGavdi8Gnj4IlX155pfY/edit#gid=0)
-online. To pull those changes into the project and launch the results, use [easy
-mode](#easy-mode):
-
-```
-$ npm run easyMode
-```
-
-Maintaining a family tree has never been easier!
-
-### Design consequences
-
-This requires that the maintainer know how to use Google Spreadsheets (which is
-easy) and also some basic knowledge of the commandline and `npm` (which is a bit
-harder). This can be avoided if you're willing to shell out money for a backend,
-but making this free was one of my goals, so that's what I went with. But if you
-have someone in your fraternity/sorority who knows a bit of coding and can enter
-data in a spreadsheet, this should be a breeze to use.
-
-## Building (or maintaining) the project
-
-Install dependencies:
-
-```bash
-$ npm install
-```
-
-Fetch the latest data from the Google Doc:
-
-```
-$ npm run getData
-```
-
-Run the project locally:
-
-```
-$ npm start
-```
-
-Deploy the latest changes (after you've committed)
-
-```
-$ npm run deploy
-```
-
-### Easy mode
-
-If all that sounds scary, just use **easy mode** to fetch the data, save it, and
-update the website (all at once):
-
-```
-$ npm run easyMode
-```
-
-## Forking this project
-
-Check out the [forking instructions](forking.md).
+Check out the [forking
+instructions](https://github.com/nfischer/framily-tree/wiki/Forking-instructions).
 
 ## License
 
