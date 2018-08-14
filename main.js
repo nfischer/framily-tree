@@ -199,7 +199,7 @@ function createNodes() {
  * Returns whether or not the search succeeded. This always returns `true` for
  * an empty query.
  */
-function findBrother(name) { // eslint-disable-line no-unused-vars
+function findBrother(name) {
   if (!name) return true; // Don't search for an empty query.
   // This requires the network to be instantiated, which implies `nodes` has
   // been populated.
@@ -221,7 +221,7 @@ function findBrother(name) { // eslint-disable-line no-unused-vars
   return false; // Could not find a match
 }
 
-function draw() { // eslint-disable-line no-unused-vars
+function draw() {
   createNodes();
 
   var changeColor;
