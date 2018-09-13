@@ -300,9 +300,9 @@ $(document).ready(function () {
 
     // Indicate if the search succeeded or not.
     if (success) {
-      $('#searchbox').css('color', 'black');
+      $('#searchbox').css('background-color', 'white');
     } else {
-      $('#searchbox').css('color', 'red');
+      $('#searchbox').css('background-color', '#EEC4C6'); // red matching flag
     }
   }
   document.getElementById('searchbox').onkeypress = function (e) {
