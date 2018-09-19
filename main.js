@@ -276,16 +276,6 @@ function draw() {
 }
 
 $(document).ready(function () {
-  // Size the network appropriately
-  function onZoom() {
-    var ratio = 2 / 3; // the aspect ratio of the background image
-    var cw = $('#mynetwork').width();
-    $('#mynetwork').css({ 'height': (cw * ratio) + 'px' });
-  }
-  // Apply this when the document loads, or window resizes
-  $(document).ready(onZoom);
-  $(window).resize(onZoom);
-
   // Start the first draw
   draw();
 
