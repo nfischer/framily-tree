@@ -7,10 +7,17 @@ body {
   font-family: Junction, sans;
   text-align: center;
 }
+/* Aspect ratio based on https://stackoverflow.com/a/10441480 */
 #mynetwork {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+
   background-image: url("../resources/thetachiflagmodified.jpg");
   background-size: 100%;
-  width: 100%;
-  height: 60em;
   border: 1px solid lightgrey;
+}
+div.stretchy-wrapper {
+  width: 100%;
+  padding-bottom: 66%; /* 3:2, the flag's aspect ratio */
+  position: relative;
 }
