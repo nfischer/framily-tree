@@ -1104,5 +1104,95 @@ var brothers = [
     "name": "Dante Bruno",
     "big": "Connor Sullivan",
     "pledgeclass": "Spring 2018"
+  },
+  {
+    "name": "Jake Arakawa",
+    "big": "Danny Lima",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Armin Khanpour",
+    "big": "Clayton Ho",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Zach Wrubel",
+    "big": "Elliot Santos",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Daniel Nouri",
+    "big": "Connor Tinsley",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Bryce Fenenbock",
+    "big": "Julian Adam",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "David Crofton",
+    "big": "Jack Arnold",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Justin Guseman",
+    "big": "Ananye Patel",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Alan Zisman",
+    "big": "Karim Zia",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Jack Gobel",
+    "big": "Chris Toubia",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Lucas Everett",
+    "big": "Christian Garcia",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Julian Uy",
+    "big": "Taylor Munoz",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Gordon Kuang",
+    "big": "Miguel Cabrales",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Kevin Peng",
+    "big": "Will Lee",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Brennan Steggink",
+    "big": "Devin Lawson",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Collin Shore",
+    "big": "Justin Hatch",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "John Webster",
+    "big": "Jack Feder",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Michael Pacult",
+    "big": "Stephen Saltvig",
+    "pledgeclass": "Fall 2018"
+  },
+  {
+    "name": "Nate Mailhot",
+    "big": "Matthew Go",
+    "pledgeclass": "Fall 2018"
   }
 ];
