@@ -917,7 +917,8 @@ var brothers = [
   {
     "name": "Alex Sun",
     "big": "Abraham Lopez",
-    "pledgeclass": "Fall 2016"
+    "pledgeclass": "Fall 2016",
+    "inactive": true
   },
   {
     "name": "Lavi Paoletti",
@@ -927,7 +928,8 @@ var brothers = [
   {
     "name": "Danny Sullivan",
     "big": "Christian Morgan",
-    "pledgeclass": "Fall 2016"
+    "pledgeclass": "Fall 2016",
+    "inactive": true
   },
   {
     "name": "Nick Edman",
@@ -961,7 +963,8 @@ var brothers = [
   {
     "name": "Evan Oneto",
     "big": "Anthony Song",
-    "pledgeclass": "Fall 2016"
+    "pledgeclass": "Fall 2016",
+    "inactive": true
   },
   {
     "name": "Spencer Ytuarte",
@@ -1084,12 +1087,6 @@ var brothers = [
     "big": "Craig Buchholz",
     "pledgeclass": "Fall 2017",
     "graduated": true
-  },
-  {
-    "name": "Ananye Patel",
-    "big": "Aaron Van Doren",
-    "pledgeclass": "Fall 2017",
-    "inactive": true
   },
   {
     "name": "Brandon Achugbue",
@@ -1228,7 +1225,8 @@ var brothers = [
   {
     "name": "Alan Zisman",
     "big": "Karim Zia",
-    "pledgeclass": "Fall 2018"
+    "pledgeclass": "Fall 2018",
+    "inactive": true
   },
   {
     "name": "Jack Gobel",
@@ -1304,7 +1302,8 @@ var brothers = [
   {
     "name": "Jason Maikis",
     "big": "Connor Tinsley",
-    "pledgeclass": "Winter 2019"
+    "pledgeclass": "Winter 2019",
+    "inactive": true
   },
   {
     "name": "Sahith Obbu",
