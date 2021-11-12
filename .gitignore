@@ -2,3 +2,6 @@ node_modules/
 .DS_Store
 *~
 *.swp
+
+# Don't store API keys in version control
+local-api-key.txt
