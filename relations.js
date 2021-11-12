@@ -1,8 +1,8 @@
 var brothers = [
   {
     "name": "Jack W.",
-    "familystarted": "Saints",
-    "graduated": true
+    "graduated": true,
+    "familystarted": "Saints"
   },
   {
     "name": "Berek Waldman",
@@ -52,8 +52,8 @@ var brothers = [
   {
     "name": "Nick Karp",
     "big": "Justin Hutton",
-    "familystarted": "Liberators",
-    "graduated": true
+    "graduated": true,
+    "familystarted": "Liberators"
   },
   {
     "name": "Daniel Kwasnick",
@@ -72,18 +72,18 @@ var brothers = [
   },
   {
     "name": "Andy Hindoyan",
-    "familystarted": "Regulators",
-    "graduated": true
+    "graduated": true,
+    "familystarted": "Regulators"
   },
   {
     "name": "Trevor Maddison",
-    "familystarted": "Regulators",
-    "graduated": true
+    "graduated": true,
+    "familystarted": "Regulators"
   },
   {
     "name": "Garrett Morgan",
-    "familystarted": "The Family",
-    "graduated": true
+    "graduated": true,
+    "familystarted": "The Family"
   },
   {
     "name": "Suraj Patel",
@@ -152,8 +152,8 @@ var brothers = [
   },
   {
     "name": "Ron Marconnet",
-    "familystarted": "Regulators",
-    "graduated": true
+    "graduated": true,
+    "familystarted": "Regulators"
   },
   {
     "name": "Mallvy Kahal",
@@ -177,8 +177,8 @@ var brothers = [
   },
   {
     "name": "Matt Abrams",
-    "familystarted": "The Family",
-    "graduated": true
+    "graduated": true,
+    "familystarted": "The Family"
   },
   {
     "name": "Brian Trinh",
@@ -187,8 +187,8 @@ var brothers = [
   },
   {
     "name": "Will Ikerd",
-    "familystarted": "The Sith and Brandon Louey",
-    "graduated": true
+    "graduated": true,
+    "familystarted": "The Sith and Brandon Louey"
   },
   {
     "name": "Josh Goldman",
@@ -214,8 +214,8 @@ var brothers = [
   {
     "name": "Henry Okoiroke",
     "pledgeclass": "Fall 2010",
-    "familystarted": "The Family",
-    "graduated": true
+    "graduated": true,
+    "familystarted": "The Family"
   },
   {
     "name": "Chris Alley",
@@ -257,8 +257,8 @@ var brothers = [
     "name": "Nick Westman",
     "big": "Robert Terzoli",
     "pledgeclass": "Spring 2012",
-    "familystarted": "Liberators",
-    "graduated": true
+    "graduated": true,
+    "familystarted": "Liberators"
   },
   {
     "name": "John Sy",
@@ -282,8 +282,8 @@ var brothers = [
     "name": "Johnny Gray",
     "big": "Justin Hutton",
     "pledgeclass": "Fall 2012",
-    "familystarted": "Liberators",
-    "graduated": true
+    "graduated": true,
+    "familystarted": "Liberators"
   },
   {
     "name": "Kevin Patterson",
@@ -1479,5 +1479,100 @@ var brothers = [
     "name": "Bennett North",
     "big": "Bryce Fenenbock",
     "pledgeclass": "Winter 2020"
+  },
+  {
+    "name": "Alvin Hadley",
+    "big": "Max Dallas",
+    "pledgeclass": "Fall 2020"
+  },
+  {
+    "name": "Josh Eidam",
+    "big": "Agam Bedi",
+    "pledgeclass": "Fall 2020"
+  },
+  {
+    "name": "Chris Bieberich",
+    "big": "Max Sicherman",
+    "pledgeclass": "Fall 2020"
+  },
+  {
+    "name": "Andrew Luff",
+    "big": "Jordany Zamor",
+    "pledgeclass": "Fall 2020"
+  },
+  {
+    "name": "Mike Zhan",
+    "big": "Ravi Varma",
+    "pledgeclass": "Fall 2020"
+  },
+  {
+    "name": "Jackson Weldon",
+    "big": "Cameron Dorais",
+    "pledgeclass": "Winter 2021"
+  },
+  {
+    "name": "Rolando Bonilla",
+    "big": "Alec Marcellin",
+    "pledgeclass": "Winter 2021"
+  },
+  {
+    "name": "Kyle Cota",
+    "big": "Jordany Zamor",
+    "pledgeclass": "Winter 2021"
+  },
+  {
+    "name": "Josh Ico",
+    "big": "Kade Adams",
+    "pledgeclass": "Winter 2021"
+  },
+  {
+    "name": "Kanoa King",
+    "big": "Zach Wrubel",
+    "pledgeclass": "Winter 2021"
+  },
+  {
+    "name": "Ryan Alomair",
+    "big": "Vishal Narayan",
+    "pledgeclass": "Winter 2021"
+  },
+  {
+    "name": "Rishi Ray",
+    "big": "Ravi Varma",
+    "pledgeclass": "Winter 2021"
+  },
+  {
+    "name": "Zach Reddy",
+    "big": "CJ Ezratty",
+    "pledgeclass": "Winter 2021"
+  },
+  {
+    "name": "Charles Whitcomb",
+    "big": "Dylan Melnick",
+    "pledgeclass": "Winter 2021"
+  },
+  {
+    "name": "David McFall",
+    "big": "Alex Tam",
+    "pledgeclass": "Spring 2021"
+  },
+  {
+    "name": "Griffin Gowdy",
+    "big": "Alec Marcellin",
+    "pledgeclass": "Spring 2021"
+  },
+  {
+    "name": "Ian Geertsen",
+    "big": "Jordany Zamor",
+    "pledgeclass": "Spring 2021"
+  },
+  {
+    "name": "Joshua Abrams",
+    "big": "Charles Whitcomb",
+    "pledgeclass": "Spring 2021"
+  },
+  {
+    "name": "Troy Hillman",
+    "big": "Cameron Dorais",
+    "pledgeclass": "Spring 2021"
   }
 ];
