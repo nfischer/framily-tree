@@ -1709,5 +1709,35 @@ var brothers = [
     "name": "Gio Villalobos",
     "big": "Josh Perez",
     "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Marcus Orwin",
+    "big": "Chris Bieberich",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Evan Schneider",
+    "big": "Chris Bieberich",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "John Reinker",
+    "big": "Shail Avasthi",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Caden Tien",
+    "big": "Michael Singer",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Oliver Whalen",
+    "big": "Rolando Bonilla",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Antwan Adams",
+    "big": "Rolando Bonilla",
+    "pledgeclass": "Fall 2021"
   }
 ];
