@@ -1466,11 +1466,6 @@ var brothers = [
     "pledgeclass": "Winter 2020"
   },
   {
-    "name": "Bruno Romani",
-    "big": "Alex Garcia",
-    "pledgeclass": "Winter 2020"
-  },
-  {
     "name": "Julian Hamama",
     "big": "Ari Sweedler",
     "pledgeclass": "Winter 2020"
@@ -1574,5 +1569,145 @@ var brothers = [
     "name": "Troy Hillman",
     "big": "Cameron Dorais",
     "pledgeclass": "Spring 2021"
+  },
+  {
+    "name": "Jonathan Conrad",
+    "big": "Adrian Alavez",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Teddy Caligiuri",
+    "big": "Luke Walker",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Cole McQuinn",
+    "big": "Max Dallas",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Ryan McWhorter",
+    "big": "Josh Eidam",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Judah Chambers",
+    "big": "Andrew Luff",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Ayden Mackenzie",
+    "big": "Andrew Luff",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Kyle Almon",
+    "big": "Bryce Fenenbock",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Jared Patel",
+    "big": "Max Sicherman",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Micah Resnick Crook",
+    "big": "Bennett North",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Dawson Taylor ",
+    "big": "Zach Reddy",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Parth Doshi",
+    "big": "Alex Tam",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Tucker Waters",
+    "big": "Charles Whitcomb",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Aidan Cone",
+    "big": "Kanoa King",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Ian Fu",
+    "big": "Kanoa King",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Eric Fritz",
+    "big": "Louie Leavitt",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Irfan Lin",
+    "big": "Jordany Zamor",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "John Bhaskar",
+    "big": "Jordany Zamor",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Brian Taylor",
+    "big": "Shail Avasthi",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Brendan McMahon",
+    "big": "Max McNeal",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Kody Lamb",
+    "big": "Ravi Varma",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Ben Kase",
+    "big": "Andrew Chrissan",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Peter DePaul",
+    "big": "Andrew Chrissan",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Ishaan Garg",
+    "big": "Vishal Narayan",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Ken Matsunaga",
+    "big": "Rutik Shinglot",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Shail Mirpuri",
+    "big": "CJ Ezratty",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Spencer Stice",
+    "big": "Sam Kaseff",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Jacob Nanquil",
+    "big": "Josh Perez",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Gio Villalobos",
+    "big": "Josh Perez",
+    "pledgeclass": "Fall 2021"
   }
 ];
