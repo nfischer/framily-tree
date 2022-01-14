@@ -1741,3 +1741,6 @@ var brothers = [
     "pledgeclass": "Fall 2021"
   }
 ];
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  module.exports = brothers;
+}
