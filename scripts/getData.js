@@ -7,8 +7,8 @@ try {
   apiKey = fs.readFileSync('local-api-key.txt', 'utf-8').trimRight('\n');
 } catch (e) {
   var url = 'https://github.com/revolunet/spreadsheet-to-json';
-  console.error('You need an API key to run this. Please see ' + url +
-      ' and store this in local-api-key.txt in the project root');
+  console.error('You need an API key to run this. Please see ' + url
+      + ' and store this in local-api-key.txt in the project root');
   process.exit(1);
 }
 
@@ -56,4 +56,3 @@ function (err, result) {
     console.log(err.stack);
     process.exit(1);
   });
-

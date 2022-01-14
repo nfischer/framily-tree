@@ -156,8 +156,8 @@ function createNodes() {
       var node = nameToNode[name];
       if (!node) {
         var correctedName = didYouMeanWrapper(name);
-        var msg =
-          'Unable to find ' + name + ', did you mean ' + correctedName + '?';
+        var msg = 'Unable to find ' + name + ', did you mean ' + correctedName
+          + '?';
         throw new Error(msg);
       }
       edge.from = node.id;
@@ -229,16 +229,16 @@ function draw() {
   switch (colorMethod) {
     case 'active':
       changeColor = function (node) {
-        node.color = (node.inactive || node.graduated) ?
-          'lightgrey' : 'lightblue';
+        node.color = (node.inactive || node.graduated)
+          ? 'lightgrey' : 'lightblue';
         nodesDataSet.update(node);
       };
       break;
     case 'pledgeClass':
       changeColor = function (node) {
-        node.color = node.pledgeclass ?
-          pledgeClassColor[node.pledgeclass.toLowerCase()] :
-          'lightgrey';
+        node.color = node.pledgeclass
+          ? pledgeClassColor[node.pledgeclass.toLowerCase()]
+          : 'lightgrey';
         nodesDataSet.update(node);
       };
       break;

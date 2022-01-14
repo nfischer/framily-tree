@@ -22,6 +22,9 @@
     "newline-per-chained-call": 0,
     "consistent-return": 0,
     "no-mixed-operators": 0,
-    "new-cap": 0
+    "new-cap": 0,
+    "no-plusplus": 0,
+    "function-paren-newline": 0,
+    "strict": 0
   }
 }
