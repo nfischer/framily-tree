@@ -1,4 +1,25 @@
 /* global vis, tinycolor, brothers, $, didYouMean */
+
+// Mock out dependencies for testing on NodeJS. These are imported in HTML in
+// the browser.
+/* eslint-disable */
+if (typeof brothers === 'undefined') {
+  brothers = require('./relations');
+}
+if (typeof tinycolor === 'undefined') {
+  tinycolor = require('tinycolor2');
+}
+if (typeof $ === 'undefined') {
+  $ = require('jquery');
+}
+if (typeof vis === 'undefined') {
+  vis = require('vis');
+}
+if (typeof didYouMean === 'undefined') {
+  didYouMean = require('didyoumean');
+}
+/* eslint-enable */
+
 var network = null;
 
 var createNodesCalled = false;
@@ -275,32 +296,38 @@ function draw() {
   }
 }
 
-$(document).ready(function () {
-  // Start the first draw
-  draw();
-
-  // Search feature
-  var dropdown = document.getElementById('layout');
-  dropdown.onchange = function () {
+if (typeof document !== 'undefined') {
+  $(document).ready(function () {
+    // Start the first draw
     draw();
-  };
-  function search() {
-    var query = $('#searchbox').val();
-    var success = findBrother(query);
 
-    // Indicate if the search succeeded or not.
-    if (success) {
-      $('#searchbox').css('background-color', 'white');
-    } else {
-      $('#searchbox').css('background-color', '#EEC4C6'); // red matching flag
+    // Search feature
+    var dropdown = document.getElementById('layout');
+    dropdown.onchange = function () {
+      draw();
+    };
+    function search() {
+      var query = $('#searchbox').val();
+      var success = findBrother(query);
+
+      // Indicate if the search succeeded or not.
+      if (success) {
+        $('#searchbox').css('background-color', 'white');
+      } else {
+        $('#searchbox').css('background-color', '#EEC4C6'); // red matching flag
+      }
     }
-  }
-  document.getElementById('searchbox').onkeypress = function (e) {
-    if (!e) e = window.event;
-    var keyCode = e.keyCode || e.which;
-    if (keyCode === '13' || keyCode === 13 /* Enter */) {
-      search();
-    }
-  };
-  document.getElementById('searchbutton').onclick = search;
-});
+    document.getElementById('searchbox').onkeypress = function (e) {
+      if (!e) e = window.event;
+      var keyCode = e.keyCode || e.which;
+      if (keyCode === '13' || keyCode === 13 /* Enter */) {
+        search();
+      }
+    };
+    document.getElementById('searchbutton').onclick = search;
+  });
+}
+
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  module.exports.createNodes = createNodes;
+}
