@@ -26,5 +26,8 @@
     "eslint-plugin-import": "^1.11.1",
     "http-server": "^0.12.1",
     "spreadsheet-to-json": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=10"
   }
 }
