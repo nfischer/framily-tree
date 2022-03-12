@@ -1739,6 +1739,51 @@ var brothers = [
     "name": "Antwan Adams",
     "big": "Rolando Bonilla",
     "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Kent Bourgoing ",
+    "big": "Adrian Alavez",
+    "pledgeclass": "Winter 2022"
+  },
+  {
+    "name": "Quinn Hilger",
+    "big": "Rolando Bonilla",
+    "pledgeclass": "Winter 2022"
+  },
+  {
+    "name": "Sam Peterson",
+    "big": "Kyle Almon",
+    "pledgeclass": "Winter 2022"
+  },
+  {
+    "name": "Carter Wink",
+    "big": "Jackson Weldon",
+    "pledgeclass": "Winter 2022"
+  },
+  {
+    "name": "Kaelan Van Cleef",
+    "big": "Judah Chambers",
+    "pledgeclass": "Winter 2022"
+  },
+  {
+    "name": "Isaac Chettiath",
+    "big": "Andrew Chrissan",
+    "pledgeclass": "Winter 2022"
+  },
+  {
+    "name": "Ben Grieder",
+    "big": "Andrew Luff",
+    "pledgeclass": "Winter 2022"
+  },
+  {
+    "name": "Mason Hoyt",
+    "big": "Max McNeal",
+    "pledgeclass": "Winter 2022"
+  },
+  {
+    "name": "Harry Persaud",
+    "big": "Shail Mirpuri",
+    "pledgeclass": "Winter 2022"
   }
 ];
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
