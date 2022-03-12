@@ -48,6 +48,10 @@ function (err, result) {
   });
 
   var str = 'var brothers = ' + JSON.stringify(result, undefined, 2) + ';\n';
+  // Turn this into a node module that we can `require()` for testing.
+  str += "if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {\n"
+       + '  module.exports = brothers;\n'
+       + '}\n';
   fs.writeFileSync('relations.js', str);
 })
   .catch(function (err) {
