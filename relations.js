@@ -1651,7 +1651,7 @@ var brothers = [
     "pledgeclass": "Fall 2021"
   },
   {
-    "name": "John Bhaskar",
+    "name": "Johnny Bhaskar",
     "big": "Jordany Zamor",
     "pledgeclass": "Fall 2021"
   },
@@ -1741,7 +1741,17 @@ var brothers = [
     "pledgeclass": "Fall 2021"
   },
   {
-    "name": "Kent Bourgoing ",
+    "name": "Colin McMahon",
+    "big": "Ryan Alomair",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Matthew Marsh",
+    "big": "Ryan Alomair",
+    "pledgeclass": "Fall 2021"
+  },
+  {
+    "name": "Kent Bourgoing",
     "big": "Adrian Alavez",
     "pledgeclass": "Winter 2022"
   },
@@ -1784,6 +1794,166 @@ var brothers = [
     "name": "Harry Persaud",
     "big": "Shail Mirpuri",
     "pledgeclass": "Winter 2022"
+  },
+  {
+    "name": "Akshyae Singh",
+    "big": "Matthew Marsh",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Baltej Randhawa",
+    "big": "Irfan Lin",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Ben Hant",
+    "big": "Mason Hoyt",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Chaynce Henderson",
+    "big": "Ayden Mackenzie",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Chris Vaca",
+    "big": "Marcus Orwin",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Connor Keithly",
+    "big": "Ben Grieder",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Cyrus Mirsafian",
+    "big": "Colin McMahon",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Damian Nastic",
+    "big": "Jonathan Conrad",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Elijah Brown",
+    "big": "Sam Peterson",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Evan Leach",
+    "big": "Will Tucker",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Garratt Army",
+    "big": "Carter Wink",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Garrett Gattis",
+    "big": "Jacob Nanquil",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Ian White",
+    "big": "Kent Bourgoing",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Ivan Hernandez",
+    "big": "Josh Eidam",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Jake Ramos",
+    "big": "Kody Lamb",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "James Cessna",
+    "big": "Andrew Luff",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Jin Ong",
+    "big": "Brian Taylor",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Josh Gurdak",
+    "big": "Cole McQuinn",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Luke Admire",
+    "big": "Jackson Weldon",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Marcus Lansing",
+    "big": "Brendan McMahon",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Michael Sorooshian",
+    "big": "Alvin Hadley",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Nick Costantini",
+    "big": "Johnny Bhaskar",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Noah Maris",
+    "big": "Judah Chambers",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Parker Jones",
+    "big": "Quinn Hilger",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Robbie Hall",
+    "big": "Gio Villalobos",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Rohan Narasimhan",
+    "big": "Peter DePaul",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Ryan Shelburne",
+    "big": "Charles Whitcomb",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Ryan Welker",
+    "big": "Tucker Waters",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Spencer Brown",
+    "big": "Kyle Almon",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Stephen Conrad",
+    "big": "John Reinker",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Tully Cannon",
+    "big": "Kyle Cota",
+    "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Zayn Khan",
+    "big": "Agam Bedi",
+    "pledgeclass": "Fall 2022"
   }
 ];
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
