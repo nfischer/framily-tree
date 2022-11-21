@@ -175,10 +175,23 @@ function createNodes() {
     if (typeof edge.from === 'string') {
       var name = edge.from;
       var node = nameToNode[name];
+      /* istanbul ignore next */
       if (!node) {
         var correctedName = didYouMeanWrapper(name);
-        var msg = 'Unable to find ' + name + ', did you mean ' + correctedName
-          + '?';
+        var msg;
+        if (!correctedName) {
+          msg = 'Unable to find a match for '
+            + JSON.stringify(name);
+        } else if (name.trim() === correctedName.trim()) {
+          msg = 'Inconsistent whitespace. Expected to find '
+            + JSON.stringify(correctedName)
+            + ', but actually found ' + JSON.stringify(name) + '. These should '
+            + 'have consistent whitespace.';
+        } else {
+          msg = 'Unable to find ' + JSON.stringify(name)
+            + ', did you mean ' + JSON.stringify(correctedName)
+            + '?';
+        }
         throw new Error(msg);
       }
       edge.from = node.id;
