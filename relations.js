@@ -1954,6 +1954,66 @@ var brothers = [
     "name": "Zayn Khan",
     "big": "Agam Bedi",
     "pledgeclass": "Fall 2022"
+  },
+  {
+    "name": "Jakob Jensen",
+    "big": "Carter Wink",
+    "pledgeclass": "Winter 2023"
+  },
+  {
+    "name": "Andrew Huang",
+    "big": "Jackson Weldon",
+    "pledgeclass": "Winter 2023"
+  },
+  {
+    "name": "Daniel Burns",
+    "big": "Kody Lamb",
+    "pledgeclass": "Winter 2023"
+  },
+  {
+    "name": "Howard Zhang",
+    "big": "Marcus Orwin",
+    "pledgeclass": "Winter 2023"
+  },
+  {
+    "name": "Jayden Zwern",
+    "big": "Aidan Cone",
+    "pledgeclass": "Winter 2023"
+  },
+  {
+    "name": "Adam Little-Varga",
+    "big": "Cole McQuinn",
+    "pledgeclass": "Winter 2023"
+  },
+  {
+    "name": "Matt Hy",
+    "big": "Tully Cannon",
+    "pledgeclass": "Winter 2023"
+  },
+  {
+    "name": "Kalani Seymore",
+    "big": "Johnny Bhaskar",
+    "pledgeclass": "Winter 2023"
+  },
+  {
+    "name": "Wayne Chiang",
+    "big": "Jin Ong",
+    "pledgeclass": "Winter 2023"
+  },
+  {
+    "name": "Nathan Tang",
+    "big": "Ryan Shelburne",
+    "pledgeclass": "Winter 2023"
+  },
+  {
+    "name": "Jason Ye",
+    "big": "Jake Ramos",
+    "pledgeclass": "Winter 2023"
+  },
+  {
+    "name": "Raj Batra",
+    "big": "Oliver Whalen",
+    "pledgeclass": "Winter 2023"
   }
 ];
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
