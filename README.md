@@ -1,6 +1,6 @@
 # Framily tree
 
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fnfischer%2Fframily-tree%2Fbadge%3Fref%3Dmain&style=flat-square)](https://actions-badge.atrox.dev/nfischer/framily-tree/goto?ref=main)
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/nfischer/framily-tree/main.yml?style=flat-square&logo=github)](https://github.com/nfischer/framily-tree/actions/workflows/main.yml)
 [![Try online](https://img.shields.io/badge/try_it-online!-yellow.svg?style=flat-square)](https://nfischer.github.io/framily-tree)
 
 Check it out [online](https://nfischer.github.io/framily-tree).
