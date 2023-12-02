@@ -2,6 +2,11 @@ var extractSheets = require('spreadsheet-to-json').extractSheets;
 
 var fs = require('fs');
 
+// Forking instructions: if you are forking this project for your own
+// fraternity, you will need to change the SPREADSHEET_ID to match the URL of
+// your new Google spreadsheet:
+var SPREADSHEET_ID = '1h6dVJKtETWX3Kr9PT6EaLu0gGavdi8Gnj4IlX155pfY';
+
 var apiKey;
 try {
   apiKey = fs.readFileSync('local-api-key.txt', 'utf-8').trimRight('\n');
@@ -13,7 +18,7 @@ try {
 }
 
 extractSheets({
-  spreadsheetKey: '1h6dVJKtETWX3Kr9PT6EaLu0gGavdi8Gnj4IlX155pfY',
+  spreadsheetKey: SPREADSHEET_ID,
   credentials: apiKey,
   sheetsToExtract: ['Sheet1'],
 },
