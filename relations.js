@@ -58,6 +58,7 @@ var brothers = [
   {
     "name": "Daniel Kwasnick",
     "big": "Justin Hutton",
+    "pledgeclass": "Spring 2011",
     "graduated": true
   },
   {
@@ -108,6 +109,7 @@ var brothers = [
   {
     "name": "David Louie",
     "big": "Ryan Lewe",
+    "pledgeclass": "Spring 2011",
     "graduated": true
   },
   {
@@ -220,7 +222,7 @@ var brothers = [
   {
     "name": "Chris Alley",
     "big": "Berek Waldman",
-    "pledgeclass": "Fall 2010",
+    "pledgeclass": "Spring 2011",
     "graduated": true
   },
   {
