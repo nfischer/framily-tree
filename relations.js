@@ -2016,6 +2016,101 @@ var brothers = [
     "name": "Raj Batra",
     "big": "Oliver Whalen",
     "pledgeclass": "Winter 2023"
+  },
+  {
+    "name": "Andrew Bistras",
+    "big": "Johnny Bhaskar",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Andrew Darwin",
+    "big": "Kalani Seymore",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Blake Marvin",
+    "big": "Cole McQuinn",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Bobby Balbuena",
+    "big": "Josh Gurdak",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Brian Booher",
+    "big": "Parth Doshi",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Chad Moore",
+    "big": "Jared Patel",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "George Spanodimos",
+    "big": "Jayden Zwern",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Jackson Wooton",
+    "big": "Connor Keithly",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Jae Hall",
+    "big": "Nathan Tang",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Kaito Ikeda",
+    "big": "Wayne Chiang",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Kellan Kim",
+    "big": "Zayn Khan",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Kyle Bruckman",
+    "big": "Tully Cannon",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Marcel Sekesan",
+    "big": "Akshyae Singh",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Marty Johnson",
+    "big": "Mason Hoyt",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Maxwell Loiacono",
+    "big": "Marcus Lansing",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Mustafa Agha",
+    "big": "John Reinker",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Payton Pelaez",
+    "big": "Chaynce Henderson",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Ryan Clark",
+    "big": "Nick Costantini",
+    "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Yash Abhyankar",
+    "big": "Baltej Randhawa",
+    "pledgeclass": "Fall 2023"
   }
 ];
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
