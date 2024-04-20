@@ -27,8 +27,6 @@ var nodes = [];
 var edges = [];
 var nodesDataSet;
 var edgesDataSet;
-var UNKNOWN_BIG_BRO = 'UNKNOWN';
-var unknownNode;
 
 var familyColor = {};
 var pledgeClassColor = {};
@@ -56,14 +54,21 @@ var getNewPledgeClassColor = (function () {
   };
 }());
 
-function didYouMeanWrapper(name) {
-  // We only compute the nameList in the case we call this. This should be
-  // uncommon, because it indicates we've already hit an unrecoverable
-  // data-entry bug.
-  var nameList = brothers.map(function (bro) {
+/* istanbul ignore next */
+/**
+ * In cases where we can't find an exact match for a brother's name, suggest
+ * similar alternatives. This is only called if there is a data entry error, and
+ * the purpose is to just give a hint as to how to fix the data entry issue.
+ * Since this is only called for data entry bugs, and those data entry bugs
+ * should not be submitted into the repo, this is currently untestable.
+ */
+function didYouMeanWrapper(invalidName) {
+  var allValidNames = brothers.map(function (bro) {
     return bro.name;
   });
-  return didYouMean(name, nameList);
+  // Find valid names which are similar to invalidName.
+  var similarValidName = didYouMean(invalidName, allValidNames);
+  return similarValidName;
 }
 
 // Only call this once (for effiencency & correctness)
@@ -99,39 +104,31 @@ function createNodes() {
 
     if (bro.big && lowerCaseFamily) {
       // This person has a big bro, but they also started a new family of their
-      // own, so let's put them in both spots
+      // own. This person gets two nodes, one underneath their big bro and
+      // another underneath their new family.
 
-      // Create a placeholder node under his big bro
+      // Node underneath the big bro. This is a "fake" node: this will exist in
+      // the tree, however you can't search for it and it won't have any little
+      // bros.
       edges.push({ from: bro.big, to: newIdx });
       nodes.push(Object.assign({}, bro, {
         id: newIdx++, // increment
-        name: '', // some non-existing name
+        name: '', // some unsearchable name.
         label: '[' + bro.name + ']',
         family: bro.familystarted.toLowerCase(),
       }));
 
-      // Create the real node under his family
-      edges.push({ from: familyToNode[lowerCaseFamily].id, to: bro.id });
+      // Node underneath the new family. This is a "real" node: just like any
+      // other node, you can search for it and it will have little bros (if this
+      // brother had any little bros).
+      var familyNode = familyToNode[lowerCaseFamily];
+      edges.push({ from: familyNode.id, to: bro.id });
     } else if (!bro.big && !lowerCaseFamily) {
-      // This is a data entry error: everyone should have a big bro, or should
-      // have started a family. For now, just add some default value for both.
-      bro.big = UNKNOWN_BIG_BRO.toLowerCase();
-
-      if (!unknownNode) {
-        // And add a placeholder family node
-        familyColor[UNKNOWN_BIG_BRO.toLowerCase()] = getNewFamilyColor();
-        unknownNode = {
-          id: newIdx++, // increment
-          name: UNKNOWN_BIG_BRO.toLowerCase(),
-          label: UNKNOWN_BIG_BRO,
-          family: UNKNOWN_BIG_BRO.toLowerCase(),
-          inactive: true,
-          font: { size: 50 }, // super-size the font
-        };
-        familyToNode[UNKNOWN_BIG_BRO.toLowerCase()] = unknownNode;
-        nodes.push(unknownNode);
-      }
-      edges.push({ from: unknownNode.id, to: bro.id });
+      /* istanbul ignore next */
+      throw new Error(
+        'Encountered a little bro ('
+        + bro.name
+        + ') without a big bro. This is a data entry error.');
     } else if (lowerCaseFamily) {
       // This person founded a family, and has no big bro, so put his node
       // directly underneath the family node
@@ -170,7 +167,7 @@ function createNodes() {
     }
   });
 
-  // Fix the edges (that point from strings instead of node IDs)
+  // Fix the edges that point from strings instead of node IDs
   edges.forEach(function (edge) {
     if (typeof edge.from === 'string') {
       var name = edge.from;
@@ -201,6 +198,7 @@ function createNodes() {
   function getFamily(node) {
     node.family = node.family || node.familystarted;
     if (node.family) return node.family;
+    /* istanbul ignore catch */
     try {
       node.family = getFamily(node.big);
     } catch (e) {
@@ -309,6 +307,9 @@ function draw() {
   }
 }
 
+/* istanbul ignore next */
+// This section is intended to only run in the browser, it does not run in
+// nodejs.
 if (typeof document !== 'undefined') {
   $(document).ready(function () {
     // Start the first draw
