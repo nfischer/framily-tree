@@ -1,6 +1,7 @@
 # Framily tree
 
 [![GitHub Actions][Actions badge]][GitHub Workflow]
+[![Codecov][Codecov badge]][Codecov link]
 [![Try online](https://img.shields.io/badge/try_it-online!-yellow.svg?style=flat-square)][GitHub Pages]
 
 Check it out [online][GitHub Pages].
@@ -53,4 +54,6 @@ property of Theta Chi Fraternity Beta Alpha chapter and its initiates.
 [Actions badge]: https://img.shields.io/github/actions/workflow/status/nfischer/framily-tree/main.yml?style=flat-square&logo=github
 [GitHub Workflow]: https://github.com/nfischer/framily-tree/actions/workflows/main.yml
 [GitHub Pages]: https://nfischer.github.io/framily-tree
+[Codecov badge]: https://img.shields.io/codecov/c/github/nfischer/framily-tree/main.svg?style=flat-square&label=coverage
+[Codecov link]: https://codecov.io/gh/nfischer/framily-tree
 [google spreadsheet]: https://docs.google.com/spreadsheets/d/1h6dVJKtETWX3Kr9PT6EaLu0gGavdi8Gnj4IlX155pfY/edit?usp=sharing
