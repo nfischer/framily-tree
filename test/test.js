@@ -67,5 +67,16 @@ describe('framily-tree', function () {
       result = main.findBrother('Al', state.nodes);
       result.name.should.equal('Alex Brown');
     });
+
+    it('will advance through multiple matches', function () {
+      var result = main.findBrother('Joe', state.nodes);
+      result.name.should.equal('Joe Smith');
+      // Advance to the next match.
+      result = main.findBrother('Joe', state.nodes, result);
+      result.name.should.equal('Joe NotSmith');
+      // And it also wraps around to the start of the matches.
+      result = main.findBrother('Joe', state.nodes, result);
+      result.name.should.equal('Joe Smith');
+    });
   });
 });

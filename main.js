@@ -28,6 +28,8 @@ var edgesGlobal;
 var nodesDataSet;
 var edgesDataSet;
 
+var previousSearchFind;
+
 var familyColorGlobal = {};
 var pledgeClassColorGlobal = {};
 
@@ -240,12 +242,21 @@ function createNodesHelper() {
   edgesDataSet = new vis.DataSet(edgesGlobal);
 }
 
-function findBrother(name, nodes) {
+function findBrother(name, nodes, prevElem) {
   var lowerCaseName = name.toLowerCase();
-  var found = nodes.find(function (element) {
+  var matches = nodes.filter(function (element) {
     return element.name.toLowerCase().includes(lowerCaseName);
   });
-  return found;
+  if (matches.length === 0) {
+    return undefined;
+  }
+
+  var idx = 0;
+  if (prevElem) {
+    idx = matches.indexOf(prevElem);
+    idx = (idx + 1) % matches.length;
+  }
+  return matches[idx];
 }
 
 /**
@@ -262,7 +273,8 @@ function findBrotherHelper(name) {
   // has been populated.
   if (!network) return false;
 
-  var found = findBrother(name, nodesGlobal);
+  var found = findBrother(name, nodesGlobal, previousSearchFind);
+  previousSearchFind = found;
 
   if (found) {
     network.focus(found.id, {
