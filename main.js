@@ -23,13 +23,13 @@ if (typeof didYouMean === 'undefined') {
 var network = null;
 
 var createNodesCalled = false;
-var nodes = [];
-var edges = [];
+var nodesGlobal;
+var edgesGlobal;
 var nodesDataSet;
 var edgesDataSet;
 
-var familyColor = {};
-var pledgeClassColor = {};
+var familyColorGlobal = {};
+var pledgeClassColorGlobal = {};
 
 function ColorSpinner(colorObj, spinAmount) {
   this.spinAmount = spinAmount;
@@ -72,16 +72,18 @@ function didYouMeanWrapper(invalidName) {
 }
 
 // Only call this once (for effiencency & correctness)
-function createNodes() {
-  if (createNodesCalled) return;
-  createNodesCalled = true;
-
-  var oldLength = brothers.length;
+function createNodes(brothers_) {
+  var oldLength = brothers_.length;
   var newIdx = oldLength;
+
+  var nodes = [];
+  var edges = [];
+  var familyColor = {};
+  var pledgeClassColor = {};
 
   var familyToNode = {};
   for (var i = 0; i < oldLength; i++) {
-    var bro = brothers[i];
+    var bro = brothers_[i];
     bro.id = i;
 
     var lowerCaseFamily = (bro.familystarted || '').toLowerCase();
@@ -220,8 +222,22 @@ function createNodes() {
     }
   });
 
-  nodesDataSet = new vis.DataSet(nodes);
-  edgesDataSet = new vis.DataSet(edges);
+  return [nodes, edges, familyColor, pledgeClassColor];
+}
+
+/* istanbul ignore next */
+function createNodesHelper() {
+  if (createNodesCalled) return;
+  createNodesCalled = true;
+
+  var output = createNodes(brothers);
+  nodesGlobal = output[0];
+  edgesGlobal = output[1];
+  familyColorGlobal = output[2];
+  pledgeClassColorGlobal = output[3];
+
+  nodesDataSet = new vis.DataSet(nodesGlobal);
+  edgesDataSet = new vis.DataSet(edgesGlobal);
 }
 
 /**
@@ -231,17 +247,30 @@ function createNodes() {
  * Returns whether or not the search succeeded. This always returns `true` for
  * an empty query.
  */
-function findBrother(name) {
-  if (!name) return true; // Don't search for an empty query.
-  // This requires the network to be instantiated, which implies `nodes` has
-  // been populated.
-  if (!network) return false;
-
+function findBrother(name, nodes) {
   var lowerCaseName = name.toLowerCase();
   var found = nodes.find(function (element) {
-    // return element.name === name;
     return element.name.toLowerCase().includes(lowerCaseName);
   });
+  return found;
+}
+
+/**
+ * Searches for the specific brother (case-insensitive, matches any substring).
+ * If found, this zooms the network to focus on that brother's node.
+ *
+ * Returns whether or not the search succeeded. This always returns `true` for
+ * an empty query.
+ */
+/* istanbul ignore next */
+function findBrotherHelper(name) {
+  if (!name) return true; // Don't search for an empty query.
+  // This requires the network to be instantiated, which implies `nodesGlobal`
+  // has been populated.
+  if (!network) return false;
+
+  var found = findBrother(name, nodesGlobal);
+
   if (found) {
     network.focus(found.id, {
       scale: 0.9,
@@ -254,7 +283,7 @@ function findBrother(name) {
 }
 
 function draw() {
-  createNodes();
+  createNodesHelper();
 
   var changeColor;
   var colorMethod = document.getElementById('layout').value;
@@ -269,25 +298,25 @@ function draw() {
     case 'pledgeClass':
       changeColor = function (node) {
         node.color = node.pledgeclass
-          ? pledgeClassColor[node.pledgeclass.toLowerCase()]
+          ? pledgeClassColorGlobal[node.pledgeclass.toLowerCase()]
           : 'lightgrey';
         nodesDataSet.update(node);
       };
       break;
     default: // 'family'
       changeColor = function (node) {
-        node.color = familyColor[node.family.toLowerCase()];
+        node.color = familyColorGlobal[node.family.toLowerCase()];
         nodesDataSet.update(node);
       };
       break;
   }
-  nodes.forEach(changeColor);
+  nodesGlobal.forEach(changeColor);
   if (!network) {
     // create a network
     var container = document.getElementById('mynetwork');
     var data = {
-      nodes: nodesDataSet,
-      edges: edgesDataSet,
+      nodesGlobal: nodesDataSet,
+      edgesGlobal: edgesDataSet,
     };
 
     var options = {
@@ -296,7 +325,7 @@ function draw() {
           sortMethod: 'directed',
         },
       },
-      edges: {
+      edgesGlobal: {
         smooth: true,
         arrows: { to: true },
       },
@@ -322,7 +351,7 @@ if (typeof document !== 'undefined') {
     };
     function search() {
       var query = $('#searchbox').val();
-      var success = findBrother(query);
+      var success = findBrotherHelper(query);
 
       // Indicate if the search succeeded or not.
       if (success) {
@@ -344,4 +373,6 @@ if (typeof document !== 'undefined') {
 
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports.createNodes = createNodes;
+  module.exports.createNodesHelper = createNodesHelper;
+  module.exports.findBrother = findBrother;
 }
