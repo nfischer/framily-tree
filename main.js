@@ -71,7 +71,6 @@ function didYouMeanWrapper(invalidName) {
   return similarValidName;
 }
 
-// Only call this once (for effiencency & correctness)
 function createNodes(brothers_) {
   var oldLength = brothers_.length;
   var newIdx = oldLength;
@@ -225,6 +224,7 @@ function createNodes(brothers_) {
   return [nodes, edges, familyColor, pledgeClassColor];
 }
 
+// Only call this once (for effiencency & correctness)
 /* istanbul ignore next */
 function createNodesHelper() {
   if (createNodesCalled) return;
@@ -240,13 +240,6 @@ function createNodesHelper() {
   edgesDataSet = new vis.DataSet(edgesGlobal);
 }
 
-/**
- * Searches for the specific brother (case-insensitive, matches any substring).
- * If found, this zooms the network to focus on that brother's node.
- *
- * Returns whether or not the search succeeded. This always returns `true` for
- * an empty query.
- */
 function findBrother(name, nodes) {
   var lowerCaseName = name.toLowerCase();
   var found = nodes.find(function (element) {
@@ -315,8 +308,8 @@ function draw() {
     // create a network
     var container = document.getElementById('mynetwork');
     var data = {
-      nodesGlobal: nodesDataSet,
-      edgesGlobal: edgesDataSet,
+      nodes: nodesDataSet,
+      edges: edgesDataSet,
     };
 
     var options = {
@@ -325,7 +318,7 @@ function draw() {
           sortMethod: 'directed',
         },
       },
-      edgesGlobal: {
+      edges: {
         smooth: true,
         arrows: { to: true },
       },
