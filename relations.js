@@ -2113,6 +2113,7 @@ var brothers = [
     "pledgeclass": "Fall 2023"
   }
 ];
+/* istanbul ignore else */
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports = brothers;
 }
