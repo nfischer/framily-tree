@@ -3,18 +3,23 @@
 // Mock out dependencies for testing on NodeJS. These are imported in HTML in
 // the browser.
 /* eslint-disable */
+/* istanbul ignore else */
 if (typeof brothers === 'undefined') {
   brothers = require('./relations');
 }
+/* istanbul ignore else */
 if (typeof tinycolor === 'undefined') {
   tinycolor = require('tinycolor2');
 }
+/* istanbul ignore else */
 if (typeof $ === 'undefined') {
   $ = require('jquery');
 }
+/* istanbul ignore else */
 if (typeof vis === 'undefined') {
   vis = require('vis');
 }
+/* istanbul ignore else */
 if (typeof didYouMean === 'undefined') {
   didYouMean = require('didyoumean');
 }
@@ -201,10 +206,10 @@ function createNodes(brothers_) {
   function getFamily(node) {
     node.family = node.family || node.familystarted;
     if (node.family) return node.family;
-    /* istanbul ignore catch */
     try {
       node.family = getFamily(node.big);
     } catch (e) {
+      /* istanbul ignore next */
       node.family = 'unknown';
     }
 
@@ -287,6 +292,7 @@ function findBrotherHelper(name) {
   return false; // Could not find a match
 }
 
+/* istanbul ignore next */
 function draw() {
   createNodesHelper();
 
@@ -376,6 +382,7 @@ if (typeof document !== 'undefined') {
   });
 }
 
+/* istanbul ignore else */
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports.createNodes = createNodes;
   module.exports.createNodesHelper = createNodesHelper;
