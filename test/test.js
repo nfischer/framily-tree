@@ -88,20 +88,17 @@ describe('framily-tree', function () {
     });
 
     it('advances backward through multiple matches', function () {
-      var result = main.findBrother('Joe', state.nodes, '',
-                                    main.DIRECTION.BACKWARD);
+      var BACKWARD = main.DIRECTION.BACKWARD;
+      var result = main.findBrother('Joe', state.nodes, '', BACKWARD);
       result.name.should.equal('Joe Smith');
       // Advance to the previous match (wrap around to the end).
-      result = main.findBrother('Joe', state.nodes, result,
-                                main.DIRECTION.BACKWARD);
+      result = main.findBrother('Joe', state.nodes, result, BACKWARD);
       result.name.should.equal('Joe Grandsmith');
       // Advance to the previous match.
-      result = main.findBrother('Joe', state.nodes, result,
-                                main.DIRECTION.BACKWARD);
+      result = main.findBrother('Joe', state.nodes, result, BACKWARD);
       result.name.should.equal('Joe Smithson');
       // Advance back to the first match.
-      result = main.findBrother('Joe', state.nodes, result,
-                                main.DIRECTION.BACKWARD);
+      result = main.findBrother('Joe', state.nodes, result, BACKWARD);
       result.name.should.equal('Joe Smith');
     });
   });
