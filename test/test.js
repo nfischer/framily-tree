@@ -25,8 +25,13 @@ describe('framily-tree', function () {
           'graduated': true
         },
         {
-          'name': 'Joe NotSmith',
+          'name': 'Joe Smithson',
           'big': 'Joe Smith',
+          'graduated': true
+        },
+        {
+          'name': 'Joe Grandsmith',
+          'big': 'Joe Smithson',
           'graduated': true
         },
       ];
@@ -68,14 +73,35 @@ describe('framily-tree', function () {
       result.name.should.equal('Alex Brown');
     });
 
-    it('will advance through multiple matches', function () {
-      var result = main.findBrother('Joe', state.nodes);
+    it('advances through multiple matches (default = FORWARD)', function () {
+      var result = main.findBrother('Joe', state.nodes, '');
       result.name.should.equal('Joe Smith');
       // Advance to the next match.
       result = main.findBrother('Joe', state.nodes, result);
-      result.name.should.equal('Joe NotSmith');
+      result.name.should.equal('Joe Grandsmith');
+      // Advance to the next match.
+      result = main.findBrother('Joe', state.nodes, result);
+      result.name.should.equal('Joe Smithson');
       // And it also wraps around to the start of the matches.
       result = main.findBrother('Joe', state.nodes, result);
+      result.name.should.equal('Joe Smith');
+    });
+
+    it('advances backward through multiple matches', function () {
+      var result = main.findBrother('Joe', state.nodes, '',
+                                    main.DIRECTION.BACKWARD);
+      result.name.should.equal('Joe Smith');
+      // Advance to the previous match (wrap around to the end).
+      result = main.findBrother('Joe', state.nodes, result,
+                                main.DIRECTION.BACKWARD);
+      result.name.should.equal('Joe Grandsmith');
+      // Advance to the previous match.
+      result = main.findBrother('Joe', state.nodes, result,
+                                main.DIRECTION.BACKWARD);
+      result.name.should.equal('Joe Smithson');
+      // Advance back to the first match.
+      result = main.findBrother('Joe', state.nodes, result,
+                                main.DIRECTION.BACKWARD);
       result.name.should.equal('Joe Smith');
     });
   });

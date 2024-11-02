@@ -35,6 +35,13 @@ var edgesDataSet;
 
 var previousSearchFind;
 
+var DIRECTION = {
+  FORWARD: 0,
+  BACKWARD: 1,
+};
+
+var KEYCODE_ENTER = 13;
+
 var familyColorGlobal = {};
 var pledgeClassColorGlobal = {};
 
@@ -247,7 +254,7 @@ function createNodesHelper() {
   edgesDataSet = new vis.DataSet(edgesGlobal);
 }
 
-function findBrother(name, nodes, prevElem) {
+function findBrother(name, nodes, prevElem, direction) {
   var lowerCaseName = name.toLowerCase();
   var matches = nodes.filter(function (element) {
     return element.name.toLowerCase().includes(lowerCaseName);
@@ -256,10 +263,15 @@ function findBrother(name, nodes, prevElem) {
     return undefined;
   }
 
+  // throw Error(`direction is ${direction}`);
+  var increment = direction === DIRECTION.FORWARD ? 1 : -1;
   var idx = 0;
   if (prevElem) {
     idx = matches.indexOf(prevElem);
-    idx = (idx + 1) % matches.length;
+    idx = (idx + increment) % matches.length;
+    if (idx < 0) {
+      idx = matches.length + idx;
+    }
   }
   return matches[idx];
 }
@@ -272,13 +284,13 @@ function findBrother(name, nodes, prevElem) {
  * an empty query.
  */
 /* istanbul ignore next */
-function findBrotherHelper(name) {
+function findBrotherHelper(name, direction) {
   if (!name) return true; // Don't search for an empty query.
   // This requires the network to be instantiated, which implies `nodesGlobal`
   // has been populated.
   if (!network) return false;
 
-  var found = findBrother(name, nodesGlobal, previousSearchFind);
+  var found = findBrother(name, nodesGlobal, previousSearchFind, direction);
   previousSearchFind = found;
 
   if (found) {
@@ -360,9 +372,10 @@ if (typeof document !== 'undefined') {
     dropdown.onchange = function () {
       draw();
     };
-    function search() {
+    function search(direction) {
+      direction = direction || DIRECTION.FORWARD;
       var query = $('#searchbox').val();
-      var success = findBrotherHelper(query);
+      var success = findBrotherHelper(query, direction);
 
       // Indicate if the search succeeded or not.
       if (success) {
@@ -374,8 +387,14 @@ if (typeof document !== 'undefined') {
     document.getElementById('searchbox').onkeypress = function (e) {
       if (!e) e = window.event;
       var keyCode = e.keyCode || e.which;
-      if (keyCode === '13' || keyCode === 13 /* Enter */) {
-        search();
+      if (typeof keyCode === 'string') {
+        keyCode = Number(keyCode);
+      }
+      if (keyCode === KEYCODE_ENTER && !e.shiftKey) {
+        search(DIRECTION.FORWARD);
+      }
+      if (keyCode === KEYCODE_ENTER && e.shiftKey) {
+        search(DIRECTION.BACKWARD);
       }
     };
     document.getElementById('searchbutton').onclick = search;
@@ -387,4 +406,5 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   module.exports.createNodes = createNodes;
   module.exports.createNodesHelper = createNodesHelper;
   module.exports.findBrother = findBrother;
+  module.exports.DIRECTION = DIRECTION;
 }
