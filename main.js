@@ -373,6 +373,11 @@ if (typeof document !== 'undefined') {
       draw();
     };
     function search(direction) {
+      if (direction !== DIRECTION.FORWARD && direction !== DIRECTION.BACKWARD) {
+        console.warn('Unexpected direction value: ' + direction
+          + ' (defaulting to FORWARD direction)');
+        direction = DIRECTION.FORWARD;
+      }
       direction = direction || DIRECTION.FORWARD;
       var query = $('#searchbox').val();
       var success = findBrotherHelper(query, direction);
@@ -397,7 +402,7 @@ if (typeof document !== 'undefined') {
         search(DIRECTION.BACKWARD);
       }
     };
-    document.getElementById('searchbutton').onclick = search;
+    document.getElementById('searchbutton').onclick = search.bind(undefined, DIRECTION.FORWARD);
   });
 }
 
