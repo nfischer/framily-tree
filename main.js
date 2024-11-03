@@ -372,6 +372,14 @@ if (typeof document !== 'undefined') {
     dropdown.onchange = function () {
       draw();
     };
+    function hidePrevNextButtons() {
+      $('#prevsearch').css('display', 'none');
+      $('#nextsearch').css('display', 'none');
+    }
+    function showPrevNextButtons() {
+      $('#prevsearch').css('display', 'inline');
+      $('#nextsearch').css('display', 'inline');
+    }
     function search(direction) {
       if (direction !== DIRECTION.FORWARD && direction !== DIRECTION.BACKWARD) {
         console.warn('Unexpected direction value: ' + direction
@@ -385,8 +393,14 @@ if (typeof document !== 'undefined') {
       // Indicate if the search succeeded or not.
       if (success) {
         $('#searchbox').css('background-color', 'white');
+        if (query !== '') {
+          showPrevNextButtons();
+        } else {
+          hidePrevNextButtons();
+        }
       } else {
         $('#searchbox').css('background-color', '#EEC4C6'); // red matching flag
+        hidePrevNextButtons();
       }
     }
     document.getElementById('searchbox').onkeypress = function (e) {
@@ -403,6 +417,8 @@ if (typeof document !== 'undefined') {
       }
     };
     document.getElementById('searchbutton').onclick = search.bind(undefined, DIRECTION.FORWARD);
+    document.getElementById('nextsearch').onclick = search.bind(undefined, DIRECTION.FORWARD);
+    document.getElementById('prevsearch').onclick = search.bind(undefined, DIRECTION.BACKWARD);
   });
 }
 
