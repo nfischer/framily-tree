@@ -34,6 +34,16 @@ describe('framily-tree', function () {
           'big': 'Joe Smithson',
           'graduated': true
         },
+        {
+          'name': ' \xA0Matt    Trailingwhitespace ', // Intentional trailing whitespace
+          'big': 'Joe Smith',
+          'graduated': true
+        },
+        {
+          'name': 'Matt Little',
+          'big': 'Matt\t\xA0\tTrailingwhitespace', // Also weird whitespace, but different than above
+          'graduated': true
+        },
       ];
       var output = main.createNodes(brothers);
       state.nodes = output[0];
@@ -100,6 +110,14 @@ describe('framily-tree', function () {
       // Advance back to the first match.
       result = main.findBrother('Joe', state.nodes, result, BACKWARD);
       result.name.should.equal('Joe Smith');
+    });
+
+    it('normalizes names and handles whitespace', function () {
+      var result = main.findBrother('Matt Trailingwhitespace', state.nodes);
+      result.name.should.equal('Matt Trailingwhitespace');
+
+      result = main.findBrother('Matt Little', state.nodes);
+      result.big.name.should.equal('Matt Trailingwhitespace');
     });
   });
 });

@@ -85,6 +85,13 @@ function didYouMeanWrapper(invalidName) {
   return similarValidName;
 }
 
+function normalizeName(name) {
+  name = name.replace(/\xA0/g, ' ');
+  name = name.replace(/\s{2,}/g, ' ');
+  name = name.replace(/(^\s+|\s+$)/g, '');
+  return name;
+}
+
 function createNodes(brothers_) {
   var oldLength = brothers_.length;
   var newIdx = oldLength;
@@ -98,6 +105,10 @@ function createNodes(brothers_) {
   for (var i = 0; i < oldLength; i++) {
     var bro = brothers_[i];
     bro.id = i;
+    bro.name = normalizeName(bro.name);
+    if (bro.big) {
+      bro.big = normalizeName(bro.big);
+    }
 
     var lowerCaseFamily = (bro.familystarted || '').toLowerCase();
     if (lowerCaseFamily && !familyColor[lowerCaseFamily]) {
@@ -192,15 +203,11 @@ function createNodes(brothers_) {
         var correctedName = didYouMeanWrapper(name);
         var msg;
         if (!correctedName) {
-          msg = 'Unable to find a match for '
+          msg = 'Unable to find a big brother named '
             + JSON.stringify(name);
-        } else if (name.trim() === correctedName.trim()) {
-          msg = 'Inconsistent whitespace. Expected to find '
-            + JSON.stringify(correctedName)
-            + ', but actually found ' + JSON.stringify(name) + '. These should '
-            + 'have consistent whitespace.';
         } else {
-          msg = 'Unable to find ' + JSON.stringify(name)
+          msg = 'Unable to find a big brother named '
+            + JSON.stringify(name)
             + ', did you mean ' + JSON.stringify(correctedName)
             + '?';
         }
