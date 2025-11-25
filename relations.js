@@ -1618,7 +1618,7 @@ var brothers = [
     "pledgeclass": "Fall 2021"
   },
   {
-    "name": "Dawson Taylor ",
+    "name": "Dawson Taylor",
     "big": "Zach Reddy",
     "pledgeclass": "Fall 2021"
   },
@@ -2111,6 +2111,56 @@ var brothers = [
     "name": "Yash Abhyankar",
     "big": "Baltej Randhawa",
     "pledgeclass": "Fall 2023"
+  },
+  {
+    "name": "Adam Nadifi",
+    "big": "Zayn Khan",
+    "pledgeclass": "Winter 2024"
+  },
+  {
+    "name": "Dalton Burford",
+    "big": "Nathan Tang",
+    "pledgeclass": "Winter 2024"
+  },
+  {
+    "name": "Luke Tesser",
+    "big": "Wayne Chiang",
+    "pledgeclass": "Winter 2024"
+  },
+  {
+    "name": "Max Riley",
+    "big": "Raj Batra",
+    "pledgeclass": "Winter 2024"
+  },
+  {
+    "name": "Sai Rachakonda",
+    "big": "Howard Zhang",
+    "pledgeclass": "Winter 2024"
+  },
+  {
+    "name": "Sean Bacarde",
+    "big": "Jared Patel",
+    "pledgeclass": "Winter 2024"
+  },
+  {
+    "name": "Vikram Iyer",
+    "big": "Kaelan Van Cleef",
+    "pledgeclass": "Winter 2024"
+  },
+  {
+    "name": "Zain Bhanji",
+    "big": "Mustafa Agha",
+    "pledgeclass": "Winter 2024"
+  },
+  {
+    "name": "Aidan Ochs",
+    "big": "Stephen Conrad",
+    "pledgeclass": "Fall 2024"
+  },
+  {
+    "name": "Danibel Kasbari",
+    "big": "Noah Maris",
+    "pledgeclass": "Fall 2024"
   }
 ];
 /* istanbul ignore else */
