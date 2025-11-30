@@ -2153,339 +2153,339 @@ var brothers = [
     "pledgeclass": "Winter 2024"
   },
   {
-      "name": "Nicky Rabadi",
-      "big": "Kyle Bruckman",
-      "pledgeclass": "Fall 2024"
+    "name": "Nicky Rabadi",
+    "big": "Kyle Bruckman",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Nicholas von Germeten",
-      "big": "Sai Rachakonda",
-      "pledgeclass": "Fall 2024"
+    "name": "Nicholas von Germeten",
+    "big": "Sai Rachakonda",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Peter Dachtler",
-      "big": "Payton Pelaez",
-      "pledgeclass": "Fall 2024"
+    "name": "Peter Dachtler",
+    "big": "Payton Pelaez",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Aidan Ochs",
-      "big": "Stephen Conrad",
-      "pledgeclass": "Fall 2024"
+    "name": "Aidan Ochs",
+    "big": "Stephen Conrad",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Gavin Sonntag",
-      "big": "Elijah Brown",
-      "pledgeclass": "Fall 2024"
+    "name": "Gavin Sonntag",
+    "big": "Elijah Brown",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Ishan Chitale",
-      "big": "Luke Tesser",
-      "pledgeclass": "Fall 2024"
+    "name": "Ishan Chitale",
+    "big": "Luke Tesser",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Israel Mandujano",
-      "big": "Brian Booher",
-      "pledgeclass": "Fall 2024"
+    "name": "Israel Mandujano",
+    "big": "Brian Booher",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Joshua Elyon",
-      "big": "Sean Bacarde",
-      "pledgeclass": "Fall 2024"
+    "name": "Joshua Elyon",
+    "big": "Sean Bacarde",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Myles Gardiner",
-      "big": "Garratt Army",
-      "pledgeclass": "Fall 2024"
+    "name": "Myles Gardiner",
+    "big": "Garratt Army",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Nicholas Garcia",
-      "big": "James Cessna",
-      "pledgeclass": "Fall 2024"
+    "name": "Nicholas Garcia",
+    "big": "James Cessna",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Ritvik Irigireddy",
-      "big": "Marcus Lansing",
-      "pledgeclass": "Fall 2024"
+    "name": "Ritvik Irigireddy",
+    "big": "Marcus Lansing",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Roland Yang",
-      "big": "Howard Zhang",
-      "pledgeclass": "Fall 2024"
+    "name": "Roland Yang",
+    "big": "Howard Zhang",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Victor Simoes",
-      "big": "Bobby Balbuena",
-      "pledgeclass": "Fall 2024"
+    "name": "Victor Simoes",
+    "big": "Bobby Balbuena",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Yangyang Xia",
-      "big": "Vikram Iyer",
-      "pledgeclass": "Fall 2024"
+    "name": "Yangyang Xia",
+    "big": "Vikram Iyer",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Danibel Kasbari",
-      "big": "Noah Maris",
-      "pledgeclass": "Fall 2024"
+    "name": "Danibel Kasbari",
+    "big": "Noah Maris",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Gian Albano",
-      "big": "Nick Costantini",
-      "pledgeclass": "Fall 2024"
+    "name": "Gian Albano",
+    "big": "Nick Costantini",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Jai Raman",
-      "big": "Adam Little-Varga",
-      "pledgeclass": "Fall 2024"
+    "name": "Jai Raman",
+    "big": "Adam Little-Varga",
+    "pledgeclass": "Fall 2024"
   },
   {
-      "name": "Parsia Babaei",
-      "big": "Luke Tesser",
-      "pledgeclass": "Winter 2025"
+    "name": "Parsia Babaei",
+    "big": "Luke Tesser",
+    "pledgeclass": "Winter 2025"
   },
   {
-      "name": "Ben Hillard",
-      "big": "Bobby Balbuena",
-      "pledgeclass": "Winter 2025"
+    "name": "Ben Hillard",
+    "big": "Bobby Balbuena",
+    "pledgeclass": "Winter 2025"
   },
   {
-      "name": "Phineas Fritsch",
-      "big": "Wayne Chiang",
-      "pledgeclass": "Winter 2025"
+    "name": "Phineas Fritsch",
+    "big": "Wayne Chiang",
+    "pledgeclass": "Winter 2025"
   },
   {
-      "name": "Michael Smee",
-      "big": "Cyrus Mirsafian",
-      "pledgeclass": "Winter 2025"
+    "name": "Michael Smee",
+    "big": "Cyrus Mirsafian",
+    "pledgeclass": "Winter 2025"
   },
   {
-      "name": "Ivan Botvinnikov",
-      "big": "Aidan Ochs",
-      "pledgeclass": "Winter 2025"
+    "name": "Ivan Botvinnikov",
+    "big": "Aidan Ochs",
+    "pledgeclass": "Winter 2025"
   },
   {
-      "name": "Emre Gurdal",
-      "big": "Vikram Iyer",
-      "pledgeclass": "Winter 2025"
+    "name": "Emre Gurdal",
+    "big": "Vikram Iyer",
+    "pledgeclass": "Winter 2025"
   },
   {
-      "name": "Pasquale Nigro",
-      "big": "Stephen Conrad",
-      "pledgeclass": "Winter 2025"
+    "name": "Pasquale Nigro",
+    "big": "Stephen Conrad",
+    "pledgeclass": "Winter 2025"
   },
   {
-      "name": "Drew Cullen",
-      "big": "Danibel Kasbari",
-      "pledgeclass": "Winter 2025"
+    "name": "Drew Cullen",
+    "big": "Danibel Kasbari",
+    "pledgeclass": "Winter 2025"
   },
   {
-      "name": "Brandon Tran",
-      "big": "Howard Zhang",
-      "pledgeclass": "Winter 2025"
+    "name": "Brandon Tran",
+    "big": "Howard Zhang",
+    "pledgeclass": "Winter 2025"
   },
   {
-      "name": "Mayar Totounji",
-      "big": "Brian Booher",
-      "pledgeclass": "Winter 2025"
+    "name": "Mayar Totounji",
+    "big": "Brian Booher",
+    "pledgeclass": "Winter 2025"
   },
   {
-      "name": "Nathan Rifkin",
-      "big": "Nathan Tang",
-      "pledgeclass": "Winter 2025"
+    "name": "Nathan Rifkin",
+    "big": "Nathan Tang",
+    "pledgeclass": "Winter 2025"
   },
   {
-      "name": "Ryan Fernandez",
-      "big": "Dalton Burford",
-      "pledgeclass": "Winter 2025"
+    "name": "Ryan Fernandez",
+    "big": "Dalton Burford",
+    "pledgeclass": "Winter 2025"
   },
   {
-      "name": "Jacob Benevente",
-      "big": "Pasquale Nigro",
-      "pledgeclass": "Fall 2025"
+    "name": "Jacob Benevente",
+    "big": "Pasquale Nigro",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Michael Zou",
-      "big": "Yangyang Xia",
-      "pledgeclass": "Fall 2025"
+    "name": "Michael Zou",
+    "big": "Yangyang Xia",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Shayan Gharagozlou",
-      "big": "Emre Gurdal",
-      "pledgeclass": "Fall 2025"
+    "name": "Shayan Gharagozlou",
+    "big": "Emre Gurdal",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Edgar Tellez-Perez",
-      "big": "Israel Mandujano",
-      "pledgeclass": "Fall 2025"
+    "name": "Edgar Tellez-Perez",
+    "big": "Israel Mandujano",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Ben Tomaszewski",
-      "big": "Nathan Tang",
-      "pledgeclass": "Fall 2025"
+    "name": "Ben Tomaszewski",
+    "big": "Nathan Tang",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Anthony Alonzo",
-      "big": "Gian Albano",
-      "pledgeclass": "Fall 2025"
+    "name": "Anthony Alonzo",
+    "big": "Gian Albano",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Owen Youngquist",
-      "big": "Mayar Totounji",
-      "pledgeclass": "Fall 2025"
+    "name": "Owen Youngquist",
+    "big": "Mayar Totounji",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Nathan Vong",
-      "big": "Bobby Balbuena",
-      "pledgeclass": "Fall 2025"
+    "name": "Nathan Vong",
+    "big": "Bobby Balbuena",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Gunnar Koenig",
-      "big": "Parsia Babaei",
-      "pledgeclass": "Fall 2025"
+    "name": "Gunnar Koenig",
+    "big": "Parsia Babaei",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Mikyle Hamidi",
-      "big": "Payton Pelaez",
-      "pledgeclass": "Fall 2025"
+    "name": "Mikyle Hamidi",
+    "big": "Payton Pelaez",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Charles French",
-      "big": "Jai Raman",
-      "pledgeclass": "Fall 2025"
+    "name": "Charles French",
+    "big": "Jai Raman",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Ryan Cuenca",
-      "big": "Joshua Elyon",
-      "pledgeclass": "Fall 2025"
+    "name": "Ryan Cuenca",
+    "big": "Joshua Elyon",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Maxwell Highland",
-      "big": "Mayar Totounji",
-      "pledgeclass": "Fall 2025"
+    "name": "Maxwell Highland",
+    "big": "Mayar Totounji",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Sean Madden",
-      "big": "Parsia Babaei",
-      "pledgeclass": "Fall 2025"
+    "name": "Sean Madden",
+    "big": "Parsia Babaei",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Aidan Vochoska",
-      "big": "Ivan Botvinnikov",
-      "pledgeclass": "Fall 2025"
+    "name": "Aidan Vochoska",
+    "big": "Ivan Botvinnikov",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Abhiram Tejomurtula",
-      "big": "Mustafa Agha",
-      "pledgeclass": "Fall 2025"
+    "name": "Abhiram Tejomurtula",
+    "big": "Mustafa Agha",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Joshua Lane",
-      "big": "Ben Hillard",
-      "pledgeclass": "Fall 2025"
+    "name": "Joshua Lane",
+    "big": "Ben Hillard",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Caden Mulloy",
-      "big": "Danibel Kasbari",
-      "pledgeclass": "Fall 2025"
+    "name": "Caden Mulloy",
+    "big": "Danibel Kasbari",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Saxton Sylvester",
-      "big": "Luke Tesser",
-      "pledgeclass": "Fall 2025"
+    "name": "Saxton Sylvester",
+    "big": "Luke Tesser",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Zia Mahmood",
-      "big": "Brian Booher",
-      "pledgeclass": "Fall 2025"
+    "name": "Zia Mahmood",
+    "big": "Brian Booher",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Aaron Hu",
-      "big": "Howard Zhang",
-      "pledgeclass": "Fall 2025"
+    "name": "Aaron Hu",
+    "big": "Howard Zhang",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Rahil Menon",
-      "big": "Vikram Iyer",
-      "pledgeclass": "Fall 2025"
+    "name": "Rahil Menon",
+    "big": "Vikram Iyer",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Logan Nyugen",
-      "big": "Peter Dachtler",
-      "pledgeclass": "Fall 2025"
+    "name": "Logan Nyugen",
+    "big": "Peter Dachtler",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Ian Korob",
-      "big": "Payton Pelaez",
-      "pledgeclass": "Fall 2025"
+    "name": "Ian Korob",
+    "big": "Payton Pelaez",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Sam Lee",
-      "big": "Kellan Kim",
-      "pledgeclass": "Fall 2025"
+    "name": "Sam Lee",
+    "big": "Kellan Kim",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Andrew Cao",
-      "big": "Pasquale Nigro",
-      "pledgeclass": "Fall 2025"
+    "name": "Andrew Cao",
+    "big": "Pasquale Nigro",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Joven Kalkat",
-      "big": "Nicholas Garcia",
-      "pledgeclass": "Fall 2025"
+    "name": "Joven Kalkat",
+    "big": "Nicholas Garcia",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Justin Chen",
-      "big": "Brian Booher",
-      "pledgeclass": "Fall 2025"
+    "name": "Justin Chen",
+    "big": "Brian Booher",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Duncan Fox",
-      "big": "Aidan Ochs",
-      "pledgeclass": "Fall 2025"
+    "name": "Duncan Fox",
+    "big": "Aidan Ochs",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Seth Valdez",
-      "big": "Israel Mandujano",
-      "pledgeclass": "Fall 2025"
+    "name": "Seth Valdez",
+    "big": "Israel Mandujano",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Pedro Hollanda",
-      "big": "Gian Albano",
-      "pledgeclass": "Fall 2025"
+    "name": "Pedro Hollanda",
+    "big": "Gian Albano",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Eddy Gutierrez Flores",
-      "big": "Danibel Kasbari",
-      "pledgeclass": "Fall 2025"
+    "name": "Eddy Gutierrez Flores",
+    "big": "Danibel Kasbari",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Austin Bray",
-      "big": "Adam Nadifi",
-      "pledgeclass": "Fall 2025"
+    "name": "Austin Bray",
+    "big": "Adam Nadifi",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Oeiskie Louis-Cleveland",
-      "big": "Marcus Lansing",
-      "pledgeclass": "Fall 2025"
+    "name": "Oeiskie Louis-Cleveland",
+    "big": "Marcus Lansing",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Sam Sadeghi",
-      "big": "Brandon Tran",
-      "pledgeclass": "Fall 2025"
+    "name": "Sam Sadeghi",
+    "big": "Brandon Tran",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Jaeden Pietrofeso",
-      "big": "Michael Smee",
-      "pledgeclass": "Fall 2025"
+    "name": "Jaeden Pietrofeso",
+    "big": "Michael Smee",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Jesper Nyugen",
-      "big": "Roland Yang",
-      "pledgeclass": "Fall 2025"
+    "name": "Jesper Nyugen",
+    "big": "Roland Yang",
+    "pledgeclass": "Fall 2025"
   },
   {
-      "name": "Nathan Lyon",
-      "big": "Stephen Conrad",
-      "pledgeclass": "Fall 2025"
+    "name": "Nathan Lyon",
+    "big": "Stephen Conrad",
+    "pledgeclass": "Fall 2025"
   }
 ];
 /* istanbul ignore else */
