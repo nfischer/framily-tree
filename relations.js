@@ -2408,7 +2408,7 @@ var brothers = [
     "pledgeclass": "Fall 2025"
   },
   {
-    "name": "Logan Nyugen",
+    "name": "Logan Nguyen",
     "big": "Peter Dachtler",
     "pledgeclass": "Fall 2025"
   },
@@ -2478,7 +2478,7 @@ var brothers = [
     "pledgeclass": "Fall 2025"
   },
   {
-    "name": "Jesper Nyugen",
+    "name": "Jesper Nguyen",
     "big": "Roland Yang",
     "pledgeclass": "Fall 2025"
   },
