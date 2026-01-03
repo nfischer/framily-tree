@@ -112,6 +112,21 @@ describe('framily-tree', function () {
       result.name.should.equal('Joe Miller');
     });
 
+    it('it stays on same match for DIRECTION.SAME_POSITION', function () {
+      var SAME_POSITION = main.DIRECTION.SAME_POSITION;
+      var result = main.findBrother('Joe', state.nodes, '', SAME_POSITION);
+      result.name.should.equal('Joe Miller');
+      // Do not change if the search query is the same.
+      result = main.findBrother('Joe', state.nodes, result, SAME_POSITION);
+      result.name.should.equal('Joe Miller');
+      // Search query is updated, but it matches the same person.
+      result = main.findBrother('Joe M', state.nodes, result, SAME_POSITION);
+      result.name.should.equal('Joe Miller');
+      // Update the search query only when the match yields different results.
+      result = main.findBrother('Joe Millers', state.nodes, result, SAME_POSITION);
+      result.name.should.equal('Joe Millerson');
+    });
+
     it('normalizes names and handles whitespace', function () {
       var result = main.findBrother('Matt Trailingwhitespace', state.nodes);
       result.name.should.equal('Matt Trailingwhitespace');
