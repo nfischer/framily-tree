@@ -88,10 +88,10 @@ describe('framily-tree', function () {
       result.name.should.equal('Joe Miller');
       // Advance to the next match.
       result = main.findBrother('Joe', state.nodes, result);
-      result.name.should.equal('Joe Grandmiller');
+      result.name.should.equal('Joe Millerson');
       // Advance to the next match.
       result = main.findBrother('Joe', state.nodes, result);
-      result.name.should.equal('Joe Millerson');
+      result.name.should.equal('Joe Grandmiller');
       // And it also wraps around to the start of the matches.
       result = main.findBrother('Joe', state.nodes, result);
       result.name.should.equal('Joe Miller');

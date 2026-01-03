@@ -262,6 +262,9 @@ function createNodesHelper() {
 }
 
 function findBrother(name, nodes, prevElem, direction) {
+  if (direction === undefined) {
+    direction = DIRECTION.FORWARD;
+  }
   var lowerCaseName = name.toLowerCase();
   var matches = nodes.filter(function (element) {
     return element.name.toLowerCase().includes(lowerCaseName);
