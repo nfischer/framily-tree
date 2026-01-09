@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
           cache: "npm"
 
       - name: Install dependencies
@@ -52,6 +52,7 @@ jobs:
       - name: Run tests
         run: npm test
 
+        # Always runs and removes the API key file as a clean up for security, even if previous steps failed
       - name: Remove API key file
         if: always()
         run: rm -f local-api-key.txt
@@ -78,7 +79,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pr="${{ steps.cpr.outputs.pull-request-number }}"
-          gh pr merge "$pr" --squash --delete-branch --admin
+          gh pr merge "$pr" --squash --delete-branch
 
       - name: Sync gh-pages from updated main
         if: ${{ steps.cpr.outputs.pull-request-number != '' }}
