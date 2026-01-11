@@ -79,8 +79,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pr="${{ steps.cpr.outputs.pull-request-number }}"
-          gh pr merge "$pr" --squash --delete-branch
+          gh pr merge "$pr" --squash --delete-branch --auto
 
+        # git configuration info set to the same as https://github.com/peter-evans/create-pull-request
       - name: Sync gh-pages from updated main
         if: ${{ steps.cpr.outputs.pull-request-number != '' }}
         run: |
@@ -95,4 +96,4 @@ jobs:
           git checkout -B gh-pages origin/gh-pages
           git reset --hard origin/main
 
-          git push origin gh-pages --force-with-lease
+          git push origin gh-pages
