@@ -1,0 +1,99 @@
+name: Update data from Google Sheet
+
+on:
+  repository_dispatch:
+    types: [update_data]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: true
+
+jobs:
+  update-data:
+    if: ${{ github.event_name == 'repository_dispatch' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify trigger secret
+        if: ${{ github.event_name == 'repository_dispatch' }}
+        run: |
+          if [ "${{ github.event.client_payload.secret }}" != "${{ secrets.TRIGGER_SECRET }}" ]; then
+            echo "❌ Invalid trigger secret"
+            exit 1
+          fi
+
+      - name: Write Google API key
+        run: |
+          echo "${{ secrets.SPREADSHEET_API_KEY }}" > local-api-key.txt
+
+      - name: Run getData
+        run: npm run getData
+
+      - name: Run tests
+        run: npm test
+
+        # Always runs and removes the API key file as a clean up for security, even if previous steps failed
+      - name: Remove API key file
+        if: always()
+        run: rm -f local-api-key.txt
+
+      - name: Create pull request on main
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: automation/update-framily-data
+          delete-branch: true
+          commit-message: "data: Update framily data from Google Sheet (automated)"
+          title: "data: Update framily data from Google Sheet (automated)"
+          body: |
+            Automated update from Google Sheet → JSON.
+            Trigger: ${{ github.event_name }}
+            Run: ${{ github.run_id }}
+          labels: automated-data
+
+      - name: Merge PR onto main
+        if: ${{ steps.cpr.outputs.pull-request-number != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pr="${{ steps.cpr.outputs.pull-request-number }}"
+          gh pr merge "$pr" --squash --delete-branch --auto
+
+        # git configuration info set to the same as https://github.com/peter-evans/create-pull-request
+      - name: Sync gh-pages from updated main
+        if: ${{ steps.cpr.outputs.pull-request-number != '' }}
+        run: |
+          set -e
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git fetch origin main:refs/remotes/origin/main
+          git fetch origin gh-pages:refs/remotes/origin/gh-pages
+
+          git checkout -B gh-pages origin/gh-pages
+          git reset --hard origin/main
+
+          git push origin gh-pages
