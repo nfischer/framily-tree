@@ -2486,11 +2486,6 @@ var brothers = [
     "name": "Nathan Lyon",
     "big": "Stephen Conrad",
     "pledgeclass": "Fall 2025"
-  },
-  {
-    "name": "Test Name",
-    "big": "Roland Yang",
-    "pledgeclass": "Fall 2025"
   }
 ];
 /* istanbul ignore else */
