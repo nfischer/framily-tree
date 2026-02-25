@@ -2324,7 +2324,7 @@ var brothers = [
   },
   {
     "name": "Anthony Alonzo",
-    "big": "Gian Albano",
+    "big": "Mayar Totounji",
     "pledgeclass": "Fall 2025"
   },
   {
