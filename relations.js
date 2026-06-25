@@ -2153,6 +2153,16 @@ var brothers = [
     "pledgeclass": "Winter 2024"
   },
   {
+    "name": "Rohan Kumar",
+    "big": "Akshyae Singh",
+    "pledgeclass": "Winter 2024"
+  },
+  {
+    "name": "Arshpaul Singh",
+    "big": "Noah Maris",
+    "pledgeclass": "Winter 2024"
+  },
+  {
     "name": "Nicky Rabadi",
     "big": "Kyle Bruckman",
     "pledgeclass": "Fall 2024"
